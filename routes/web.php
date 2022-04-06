@@ -21,10 +21,13 @@ use App\Http\Controllers\EventController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\EventController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\EventController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\EventController::class, 'index'])->name('home');
 
 //CRUD Event
 Route::get('/edit/{id}', [App\Http\Controllers\EventController::class, 'edit'])->name('edit');
 Route::delete('/delete/{id}', [App\Http\Controllers\EventController::class, 'destroy'])->name('delete');
 Route::patch('/update/{id}', [App\Http\Controllers\EventController::class, 'update'])->name('update');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
