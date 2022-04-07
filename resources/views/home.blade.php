@@ -30,14 +30,20 @@
                                             <p class="work-sans font-semibol text-sm tracking-wide"> Editar</p>
                                         </button>
                                     </a>
-                            <!--buttons-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     @endforeach
     {{$events -> links()}}
     @endsection
+
+        <a href="{{ route('create') }}">
+        <button type='button' class="text-withe py-3 px-4 rounded-lg bg-blue-500">
+            <p class="work-sans font-semibol text-sm tracking-wide">Crear</p>
+        </button>
+
 </section>
