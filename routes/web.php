@@ -21,13 +21,16 @@ use App\Http\Controllers\EventController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\EventController::class, 'index']);
-Route::get('/home', [App\Http\Controllers\EventController::class, 'index'])->name('home');
+Route::get('/', [EventController::class, 'index']);
+Route::get('/home', [EventController::class, 'index'])->name('home');
 
 //CRUD Event
-Route::get('/edit/{id}', [App\Http\Controllers\EventController::class, 'edit'])->name('edit');
-Route::delete('/delete/{id}', [App\Http\Controllers\EventController::class, 'destroy'])->name('delete');
-Route::patch('/update/{id}', [App\Http\Controllers\EventController::class, 'update'])->name('update');
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::delete('/delete/{id}', [EventController::class, 'destroy'])->name('delete');
+
+Route::get('/edit/{id}', [EventController::class, 'edit'])->name('edit');
+Route::patch('/update/{id}', [EventController::class, 'update'])->name('update');
+
+Route::post('/events', [EventController::class, 'store'])->name('store');
+Route::get('/create', [EventController::class, 'create'])->name('create');
+
