@@ -1,49 +1,58 @@
 @extends('layouts.app')
-<!-- meter el header de componentes -->
-<section class="carrousel-section">
-    <!-- PARA EL CARROUSELL -->
-</section>
-<section class= "product-card-section flex flex-row justify-arround flex-wrap">
-    @section ('content')
+
+@section ('content')
+<div class="container">
+    <div class="flex items-center flex-wrap justify-around">
     @foreach ($events as $event)
-    <section class="pt-20 lg:pt-[120px] pb-10 lg:pb-20 bg-[#F3F4F6]">
-        <div class="container">
-            <div class="flex flex-wrap -mx-4">
-                <div class="w-full md:w-1/2 xl:w-1/3 px-4">
-                    <div class="bg-zinc-200 rounded-lg overflow-hidden mb-10">
-                    <img src="{{$event -> image}}" alt="image" class="w-full"/>
-                        <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
-                            <h3>
-                                <a href="javascript:void(0)"class="font-semibold text-black text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary">{{$event -> name}}
-                                </a>
-                            </h3>
-                            <p class="text-base text-body-color leading-relaxed mb-7">{{$event -> description}}</p>
-                            <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
-                                @method ('delete')
-                                @csrf
-                                <button type="submit" onclick="return confirm('Está seguro que desea eliminar el evento {{$event -> name}}?')">
-                                    Eliminar
-                                </button>
-                            </form>
-                                    <a href="{{ route('edit', ['id' => $event->id]) }}">
-                                        <button type='button' class="text-withe py-3 px-4 rounded-lg bg-blue-500">
-                                            <p class="work-sans font-semibol text-sm tracking-wide"> Editar</p>
-                                        </button>
-                                    </a>
-                        </div>
-                    </div>
+        
+        <!-- Card -->
+        <div class="hover:bg-gray-800 delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8">
+            <!-- Image Cover -->
+            <a href="#">
+                <img src="{{ $event -> image }}" style="width:100%; height:181px" class="w-full rounded shadow"/>
+            </a>
+            
+            <!-- Title -->
+            <h3 class="text-gray-200 font-bold mt-3 text-center truncate_title"> {{ $event -> name }} </h3>
+
+            <!-- Description -->
+            <p class="text-gray-400 font-light mt-2 text-xs truncate_text mb-1"> {{ $event -> description }} </p>
+
+            <div class="flex items-end justify-between">
+                <a target="_blank" rel="noreferrer noopener" href="#"
+                    class="border-3 border-green-500 hover:bg-green-500 text-white rounded-full px-7 py-1">
+                    Ver mas
+                </a>
+                <div class="flex items-center flex-col">
+                    <p class="text-gray-400 font-light">{{ $event -> date }}</p>
+                    <p class="text-gray-400 font-light">Plazas: {{ $event -> capacity }}</p>
                 </div>
+                
+                <a target="_blank" rel="noreferrer noopener" href="#"
+                    class="bg-blue-900 hover:bg-green-500 text-white rounded-full px-6 py-2">
+                    Apuntarse
+                </a>
             </div>
+
+            <div class="flex justify-end mt-2">
+                <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
+                    @method ('delete')
+                    @csrf 
+                    <button type="submit" onclick="return confirm('Está seguro que desea eliminar el evento {{$event -> name}}?')" class="mr-10 text-white text-base" >
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </form>
+
+                <a target="_blank" rel="noreferrer noopener" href="{{ route('edit', ['id' => $event->id]) }}"
+                    class=" text-white px-3 text-base">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </a>
+            </div>
+
         </div>
-    </section>
 
     @endforeach
-    {{$events -> links()}}
-    @endsection
-
-        <a href="{{ route('create') }}">
-        <button type='button' class="text-withe py-3 px-4 rounded-lg bg-blue-500">
-            <p class="work-sans font-semibol text-sm tracking-wide">Crear</p>
-        </button>
-
-</section>
+    </div>
+</div>
+{{ $events -> links() }}
+@endsection
