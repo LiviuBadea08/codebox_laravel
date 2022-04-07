@@ -22,7 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/cards.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    
+    <link href="{{ asset('css/formulario.css') }}" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
