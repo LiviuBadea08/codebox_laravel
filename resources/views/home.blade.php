@@ -1,20 +1,19 @@
 @extends('layouts.app')
 
 @section ('content')
+
+<!-- carrousel -->
+
 <div class="container">
     <div class="flex items-center flex-wrap justify-around">
     @foreach ($events as $event)
 
-        <!-- Card -->
         <div class="hover:bg-gray-800 delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8">
 
-            <!-- Image Cover -->
             <img src="{{ $event -> image }}" style="width:100%; height:181px" class="w-full rounded shadow"/>
-                
-            <!-- Title -->
+            
             <h3 class="text-gray-200 font-bold mt-3 text-center truncate_title"> {{ $event -> name }} </h3>
 
-            <!-- Description -->
             <p class="text-gray-400 font-light mt-2 text-xs truncate_text mb-1"> {{ $event -> description }} </p>
 
             <div class="flex items-end justify-between">
@@ -52,6 +51,12 @@
 
     @endforeach
     </div>
+    <!-- boton create pendiente de estilizar -->
+    <a href="{{ route('create') }}" class="bg-gray-900 text-white px-4 py-2 rounded-full m-4">
+        <i class="fa-solid fa-plus-circle"></i>
+    </a>
+
+
 </div>
 
 {{ $events -> links() }}
