@@ -30,6 +30,12 @@
                                             <p class="work-sans font-semibol text-sm tracking-wide"> Editar</p>
                                         </button>
                                     </a>
+
+                                    <a href="{{ route('show', ['id' => $event->id]) }}">
+                                        <button type='button' class="text-withe py-3 px-4 rounded-lg bg-blue-500">
+                                            <p class="work-sans font-semibol text-sm tracking-wide"> Show</p>
+                                        </button>
+                                    </a>
                         </div>
                     </div>
                 </div>
