@@ -16,7 +16,7 @@
             <h3 class="text-gray-200 font-bold mt-3 text-center truncate_title"> {{ $event -> name }} </h3>
 
             <!-- Description -->
-            <p class="text-gray-400 font-light mt-2 text-xs truncate_text mb-1"> {{ $event -> description }} </p>
+            <p class="text-gray-400 font-light mt-2 text-xs truncate_text mb-1" > {{ $event -> description }} </p>
 
             <div class="flex items-end justify-between">
                 <a target="_blank" rel="noreferrer noopener" href="#"
