@@ -80,7 +80,7 @@ class CrudTest extends TestCase
     public function test_create_view_is_displayed_correctly() {
         $this -> withoutExceptionHandling();
 
-        $response = $this -> get(route('/create'));
+        $response = $this -> get(route('create'));
 
         $response -> assertStatus(200)
                     -> assertViewIs('create');
