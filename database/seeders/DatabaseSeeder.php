@@ -6,6 +6,7 @@ use App\Models\Event;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,17 +23,20 @@ class DatabaseSeeder extends Seeder
             'name' => 'Product 1',
             'description' => 'Description 1',
             'price' => '10',
-            'image' => 'https://via.placeholder.com/150',
+            'image' => 'https://static.toiimg.com/thumb/msid-89392914,width-1070,height-580,imgsize-104716,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg',
             'date' => '2020-01-01',
             'time' => '10:00:00',
             'capacity' => '1',
-            'featured' => '1',
+            'featured' => true,
         ]);
         Event::factory(15)->create();
-        User::factory(1)->create([
-            'name' => 'user1',
-            'email' => 'user1@gmail.com',
-            'password' => 'password',
-        ]);
+        
+        $user = new User();
+
+        $user->name = 'user1';
+        $user->email = 'user1@gmail.com';
+        $user->password = Hash::make('password');
+
+        $user->save();
     }
 }

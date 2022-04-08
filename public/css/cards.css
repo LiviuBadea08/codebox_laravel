@@ -1,12 +1,12 @@
 @media (min-width: 1536px){
-    .container {
-        max-width: 1293px !important;
-    }
+  .container {
+      max-width: 1293px !important;
   }
+}
     
-    .max-w-screen-sm {
-      max-width: 368px !important;
-    }
+  .max-w-screen-sm {
+    max-width: 368px !important;
+  }
   .max-w-sm {
       max-width: 24rem !important;
   }
@@ -14,7 +14,7 @@
     margin-left: 1.2rem !important;
   }
   .truncate_text{
-    height:52px;
+    height:51px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -26,4 +26,11 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+  }
+  .icon_hover:hover{
+    color: rgb(209 213 219);
+  }
+  .width_description{
+    display: block;
+    width: 336px;
   }
