@@ -7,8 +7,8 @@
         <div class="flex space-x-2 pl-16 pb-5 pt-5">
         <h1>Añadir un evento</h1>
         </div>
-        {{-- <form class=" col-sm-4 p-4"> --}}
-            {{-- <h3 class="flex space-x-2 justify-center">Imagen</h3>
+        <form class=" col-sm-4 p-4">
+            <h3 class="flex space-x-2 justify-center">Imagen</h3>
             <section class="flex space-x-2 justify-center pb-2">
                         <div class="marco1">
                             <label for="image_uploads">
@@ -16,7 +16,7 @@
                             </label>
                             <input type="file" id="image_uploads" name="image" accept=".jpg, .jpeg, .png" multiple style="display:none">
                         </div>
-            </section> --}}
+            </section>
                 <h3 class="flex space-x-2 justify-center">Titulo</h3>
             <section class="flex space-x-2 justify-center pb-2">
                         <div class="marco2">
