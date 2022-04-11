@@ -17,8 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('name', 150);
             $table->string('description', 250);
+<<<<<<< HEAD
+            $table->integer('price')->nullable();
+=======
             $table->integer('price');
-            $table->string('image', 255);
+>>>>>>> 9df0ea72370a8765b206ec27fd21a19cc6045547
+            $table->string('image', 255)->nullable();
             $table->date('date');
             $table->time('time');
             $table->integer('capacity');

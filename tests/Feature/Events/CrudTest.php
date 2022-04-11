@@ -85,5 +85,17 @@ class CrudTest extends TestCase
         $response -> assertStatus(200)
                     -> assertViewIs('create');
     }
+
+    public function test_view_show_is_ok(){
+        $this -> withExceptionHandling();
+
+        $event = Event::factory()->create();
+
+        $response = $this->get(route('show', $event->id));
+
+        $response->assertStatus(200)
+                ->assertSee($event -> title);
+
+    }
 }
 
