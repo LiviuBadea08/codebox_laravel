@@ -4,7 +4,7 @@
     <form method="post" action="{{route('update', $event->id)}}">
         @method('patch')
         @csrf
-        <h1 class="flex pl-7">Añadir un evento</h1>
+        <h1 class="flex pl-7">Editar un evento</h1>
         <section>
         <div class="flex justify-center space-x-2 pl-16 ">
             <div class="marco2">
@@ -20,15 +20,15 @@
         </section>
         <h3 class="flex space-x-2 justify-center">Descripción</h3>
         <section class="flex space-x-2 justify-center pb-6">
-            <div class="marco2">
-                <input type="text" class="form-control" id="description" name="description" value="{{$event->description}}">
-            </div>
+                <div class="marco2">
+                        <textarea rows="4" cols="25" name="titulo" class="descripcion" id="titulo" aria-describedby="titulo" required></textarea>
+                </div>
         </section>
             <h3 class="flex space-x-2 justify-center">Fecha y hora</h3>
         <section class="flex space-x-2 justify-center">
         <div>
             <label for="date"></label>
-            <input type="date" id="date" name="date" value="{{$event->date}}" min="2022-04-06" max="2022-12-31">
+            <input type="date" id="date" name="date" value="{{$event->date}}" min="0000-00-00" max="2022-12-31">
         </div>
         <div>
             <input value="{{$event->time}}" type="time" name="time" id="time">

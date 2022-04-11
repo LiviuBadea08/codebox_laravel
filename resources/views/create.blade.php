@@ -28,14 +28,14 @@
                 <h3 class="flex space-x-2 justify-center">Descripción</h3>
             <section class="flex space-x-2 justify-center pb-6">
                         <div class="marco2">
-                            <input type="text" name="titulo" class="descripcion" id="titulo" aria-describedby="titulo" required>
+                            <textarea rows="4" cols="20" name="titulo" class="descripcion" id="titulo" aria-describedby="titulo" required></textarea>
                         </div>
             </section>
                 <h3 class="flex space-x-2 justify-center">Fecha y hora</h3>
             <section class="flex space-x-2 justify-center">
                     <div>
                         <label for="start"></label>
-                        <input type="date" id="start" name="trip-start"  min="2022-04-06" max="2022-12-31">
+                        <input type="date" id="start" name="trip-start"  min="0000-00-00" max="2022-12-31">
                     </div>
                     <div>
                         <input type="time" name="hora" id="time">
@@ -51,9 +51,9 @@
             </section>
             <div class="flex space-x-2 justify-center space-evenly">
                 
-            <button type="submit" class="btn btn-primary" onclick="return confirm ('Seguro que desea crear este evento?')">Confirmar</button>
+            <button type="submit" class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out" onclick="return confirm ('Seguro que desea crear este evento?')">Confirmar</button>
             <!--  create button that redirects to home -->
-            <a href="{{route('home')}}" class="btn btn-primary">Cancelar</a>
+            <a href="{{route('home')}}" class="btn inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Cancelar</a>
         </div>
 </form>
 
