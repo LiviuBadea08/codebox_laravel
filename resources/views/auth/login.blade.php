@@ -70,9 +70,7 @@
         </div>
     </div>
 </div>
-          <!-- component -->
-<!-- This is an example component 
-    Instagram: ccornejo__ -->
+          >
 <div class='grid grid-cols-12'>
    <div class="col-span-4 text-white font-sans font-bold bg-white min-h-screen pl-7">
        <div class="grid grid-rows-6 grid-flow-col min-h-screen items-center justify-items-start">
@@ -88,9 +86,14 @@
                        type="text" 
                        name="username" 
                        placeholder="Write your username" 
-                       class="w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"/>   
-                       <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>  
-                        
+                       class="w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"/>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror   
+                            </div>   
+
                        @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -105,7 +108,7 @@
                        type="password" 
                        name="password" 
                        placeholder="Write your password" 
-                       class=" w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"/>
+                       class=" w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"/
 
                        @error('password')
                                     <span class="invalid-feedback" role="alert">
