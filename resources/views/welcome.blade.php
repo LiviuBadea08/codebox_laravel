@@ -1,15 +1,19 @@
 @extends('layouts.app')
 
-html animacion
+<!-- html animacion
 
 <div class="animation">
         <h1 class="heading-primary">
             <span class="logo"><img src="./img/Logo.png"></span>
             <span class="phrase">Cursos al alcance de todos</span>
         </h1>
+ -->
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9df0ea72370a8765b206ec27fd21a19cc6045547
 <!-- css animacion
 
 body {
