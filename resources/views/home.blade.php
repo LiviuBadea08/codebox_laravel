@@ -3,11 +3,13 @@
 @section ('content')
 
 <!-- carrousel -->
+@if (Auth::check() && Auth::user()->isAdmin())
         <div>
             <a href="{{ route('create') }}" class="bg-gray-900 text-white px-4 py-2 rounded-full m-4">
             <i class="fa-solid fa-plus-circle"></i>
             </a>
         </div>
+@endif
         <div class="container">
         <div class="flex items-center flex-wrap justify-around">
     @foreach ($events as $event)
@@ -36,7 +38,7 @@
                     Apuntarse
                 </a>
             </div>
-
+            @if (Auth::check() && Auth::user()->isAdmin())
             <div class="flex justify-end mt-2">
                 <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
                     @method ('delete')
@@ -51,6 +53,7 @@
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>
             </div>
+            @endif
 
         </div>
 
