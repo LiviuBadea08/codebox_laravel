@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 150);
             $table->string('description', 250);
             $table->integer('price');
-            $table->string('image', 255);
+            $table->string('image', 255)->nullable();
             $table->date('date');
             $table->time('time');
             $table->integer('capacity');

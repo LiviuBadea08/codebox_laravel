@@ -10,8 +10,15 @@
                 <label for="image">
                     <img src="./media/plus.png" style="cursor:pointer">
                 </label>
+                <!-- input imagen debe ser textito con url -->
+<!--                 <input type="file" id="image" name="image" value="{{$event->image}}" accept=".jpg, .jpeg, .png" multiple style="display:none">
+ -->     
                 <input type="file" id="image" name="image" value="{{$event->image}}" accept=".jpg, .jpeg, .png" multiple style="display:none">
             </div>
+            <div class="marco2">
+                <img src="{{$event->image}}" alt="">
+            </div>
+        </div>
         </section>
         <h3 class="flex space-x-2 justify-center">Titulo</h3>
         <section class="flex space-x-2 justify-center pb-2">
