@@ -30,13 +30,15 @@ class DatabaseSeeder extends Seeder
             'featured' => true,
         ]);
         Event::factory(15)->create();
-        
-        $user = new User();
+        User::factory(1)->create([
+            'name' => 'user1',
+            'email' => 'user1@gmail.com',
+        ]);
 
-        $user->name = 'user1';
-        $user->email = 'user1@gmail.com';
-        $user->password = Hash::make('password');
-
-        $user->save();
+        User::factory(1)->create([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'isAdmin' => true,
+        ]);
     }
 }
