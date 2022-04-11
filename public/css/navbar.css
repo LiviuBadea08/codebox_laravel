@@ -173,3 +173,15 @@
         display: contents;
     }
 } 
+
+/* scroll bar */
+
+body::-webkit-scrollbar{
+    width: 9px;
+    background-color: black;
+}
+body::-webkit-scrollbar-thumb{
+    width: 9px;
+    background-color: #00d295;
+    border-radius: 5px;
+}

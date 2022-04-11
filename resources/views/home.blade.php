@@ -10,9 +10,9 @@
         <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
             @foreach ($events as $event)
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div style="background-image: url('{{ $event->image }}'); width:100%;">
-                        {{-- <img src="{{ $event->image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."> --}}
-                    </div>
+                    {{-- <div style="background-image: url('{{ $event->image }}'); width:100%;"> --}}
+                        <img src="{{ $event->image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                    {{-- </div> --}}
                 </div>
             @endforeach
         </div>
@@ -69,7 +69,7 @@
                 </a>
             </div>
             <!-- admin button -->
-            {{-- <div class="flex justify-end mt-2">
+            <div class="flex justify-end mt-2">
                 <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
                     @method ('delete')
                     @csrf 
@@ -78,11 +78,11 @@
                     </button>
                 </form>
 
-                <a target="_blank" rel="noreferrer noopener" href="{{ route('edit', ['id' => $event->id]) }}"
+                <a href="{{ route('edit', ['id' => $event->id]) }}"
                     class=" text-white px-3 text-base ">
                     <i class="fa-solid fa-pen-to-square icon_hover"></i>
                 </a>
-            </div> --}}
+            </div>
         </div>
 
     @endforeach

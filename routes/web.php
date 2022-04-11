@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,6 @@ Route::patch('/update/{id}', [EventController::class, 'update'])->name('update')
 Route::post('/events', [EventController::class, 'store'])->name('store');
 Route::get('/create', [EventController::class, 'create'])->name('create');
 
+// USER PROFILE
+
+Route::get('/auth/profile', [UserController::class, 'show'])->name('profile')->middleware('auth');
