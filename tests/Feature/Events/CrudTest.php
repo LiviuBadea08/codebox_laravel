@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Event;
+use App\Models\User;
 
 class CrudTest extends TestCase
 {
@@ -30,6 +31,10 @@ class CrudTest extends TestCase
 
     public function test_an_event_can_be_deleted() {
         $this -> withoutExceptionHandling();
+
+        $userAdmin = User::factory()->create(['isAdmin' => true]);
+        $this->actingAs($userAdmin);
+
 
         $event = Event::factory()->create();
         $this -> assertCount(1, Event::all());
