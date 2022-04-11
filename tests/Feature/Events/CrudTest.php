@@ -94,7 +94,6 @@ class CrudTest extends TestCase
 
         $userAdmin = User::factory()->create(['isAdmin' => true]);
         $this->actingAs($userAdmin);
-
         $this -> post(route('store'), [
             'name' => 'New Event',
             'description' => 'New Description',
@@ -105,9 +104,24 @@ class CrudTest extends TestCase
             'capacity' => 'New Capacity',
             'featured' => 'New Featured',
         ]);
-
         $this -> assertCount(1, Event::all());
         
+
+
+        $user1 = User::factory()->create(['isAdmin' => false]);
+        $this->actingAs($user1);
+        $this -> post(route('store'), [
+            'name' => 'New Event',
+            'description' => 'New Description',
+            'date' => '2020-01-01',
+            'time' => '12:00:00',
+            'image' => 'New Image',
+            'price' => 'Nwe Price',
+            'capacity' => 'New Capacity',
+            'featured' => 'New Featured',
+        ]);
+        $this -> assertCount(1, Event::all());
+
     }
 
     public function test_create_view_is_displayed_correctly() {
