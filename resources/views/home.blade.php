@@ -3,12 +3,17 @@
 @section ('content')
 
 <!-- carrousel -->
-
-<div class="container">
-    <div class="flex items-center flex-wrap justify-around">
+        <div>
+            <a href="{{ route('create') }}" class="bg-gray-900 text-white px-4 py-2 rounded-full m-4">
+            <i class="fa-solid fa-plus-circle"></i>
+            </a>
+        </div>
+        <div class="container">
+        <div class="flex items-center flex-wrap justify-around">
     @foreach ($events as $event)
+    
 
-        <div class="hover:bg-gray-800 delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8">
+        <div class="hover:bg-gray-800 delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8 mt-4">
 
             <img src="{{ $event -> image }}" style="width:100%; height:181px" class="w-full rounded shadow"/>
             
@@ -52,10 +57,6 @@
     @endforeach
     </div>
     <!-- boton create pendiente de estilizar -->
-    <a href="{{ route('create') }}" class="bg-gray-900 text-white px-4 py-2 rounded-full m-4">
-        <i class="fa-solid fa-plus-circle"></i>
-    </a>
-
 
 </div>
 
