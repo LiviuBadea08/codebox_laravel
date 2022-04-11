@@ -37,7 +37,11 @@
 </div>
 
 <div class="container">
-    <div class="flex items-center flex-wrap justify-around">
+    <!-- boton create pendiente de estilizar -->
+    <a href="{{ route('create') }}" class="bg-gray-900 text-white px-4 py-2 rounded-full m-4">
+        <i class="fa-solid fa-plus-circle"></i>
+    </a>
+    <div class="flex items-center flex-wrap justify-around mt-3">
     @foreach ($events as $event)
         
         <!-- Card -->
@@ -87,8 +91,10 @@
 
     @endforeach
     </div>
+
+</div>
     <div class="flex justify-around">
         {{ $events -> links() }}
     </div>
-</div>
+
 @endsection
