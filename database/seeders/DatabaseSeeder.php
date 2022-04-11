@@ -6,6 +6,7 @@ use App\Models\Event;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facade\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -40,6 +41,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'isAdmin' => true,
         ]);
-    }
 
+        $user = New User();
+
+        $user->name = 'user1';
+        $user->email = 'user1@gmail.com';
+        $user->password = Hash::make('password');
+        $user->save();
+
+    }
 }
