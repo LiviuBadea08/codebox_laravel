@@ -46,6 +46,9 @@ class CrudTest extends TestCase
     public function test_an_event_can_be_updated() {
         $this -> withoutExceptionHandling();
 
+        $userAdmin = User::factory()->create(['isAdmin' => true]);
+        $this->actingAs($userAdmin);
+
         $event = Event::factory()->create();
         $this -> assertCount(1, Event::all());
 
@@ -55,6 +58,9 @@ class CrudTest extends TestCase
 
     public function test_if_view_edit_is_displayed_correctly() {
         $this -> withoutExceptionHandling();
+
+        $userAdmin = User::factory()->create(['isAdmin' => true]);
+        $this->actingAs($userAdmin);
 
         $event = Event::factory()->create();
         $this -> assertCount(1, Event::all());
@@ -66,6 +72,9 @@ class CrudTest extends TestCase
 
     public function test_an_event_can_be_created() {
         $this -> withoutExceptionHandling();
+
+        $userAdmin = User::factory()->create(['isAdmin' => true]);
+        $this->actingAs($userAdmin);
 
         $this -> post(route('store'), [
             'name' => 'New Event',
@@ -84,6 +93,9 @@ class CrudTest extends TestCase
 
     public function test_create_view_is_displayed_correctly() {
         $this -> withoutExceptionHandling();
+
+        $userAdmin = User::factory()->create(['isAdmin' => true]);
+        $this->actingAs($userAdmin);
 
         $response = $this -> get(route('create'));
 
