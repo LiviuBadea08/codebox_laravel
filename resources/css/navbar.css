@@ -61,7 +61,8 @@
     position: absolute;
     background-color: #000000c7;
     top: 50.9px;
-    right: -40%;
+    /* right: -40%; */
+    right: 0%;
     width: 15%;
     height: calc(110% - 53.9px);
     overflow-y: auto;
@@ -93,7 +94,7 @@
 #nav__logo{
     width: 130px;
     height: 31px;
-    background-image: url('../img/logo.png');
+    background-image: url('../img/Logo.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: block;
@@ -146,7 +147,8 @@
         position: absolute;
         background-color: #000000c7;
         top: 51.9px;
-        right: -40%;
+        /* right: -40%; */
+        right: 0%;
         width: 180px;
         height: calc(100% - 53.9px);
         overflow-y: auto;
