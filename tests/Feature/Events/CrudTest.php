@@ -34,13 +34,19 @@ class CrudTest extends TestCase
 
         $userAdmin = User::factory()->create(['isAdmin' => true]);
         $this->actingAs($userAdmin);
-
-
         $event = Event::factory()->create();
         $this -> assertCount(1, Event::all());
-
         $this -> delete(route('delete', $event -> id));
         $this -> assertCount(0, Event::all());
+        
+        
+
+        $user1 = User::factory()->create(['isAdmin' => false]);
+        $this->actingAs($user1);
+        $event = Event::factory()->create();
+        $this -> assertCount(1, Event::all());
+        $this -> delete(route('delete', $event -> id));
+        $this -> assertCount(1, Event::all());
     }
 
     public function test_an_event_can_be_updated() {
@@ -48,12 +54,19 @@ class CrudTest extends TestCase
 
         $userAdmin = User::factory()->create(['isAdmin' => true]);
         $this->actingAs($userAdmin);
-
         $event = Event::factory()->create();
         $this -> assertCount(1, Event::all());
-
         $this -> patch(route('update', $event -> id), ['name' => 'New Name',]);
         $this -> assertEquals(Event::first() -> name, 'New Name', );
+
+
+        $user1 = User::factory()->create(['isAdmin' => false]);
+        $this->actingAs($user1);
+        $this -> assertCount(1, Event::all());
+        $this -> patch(route('update', $event -> id), ['New Name' => 'name',]);
+        $this -> assertEquals(Event::first() -> name, 'New Name', );
+        
+
     }
 
     public function test_if_view_edit_is_displayed_correctly() {
@@ -61,13 +74,19 @@ class CrudTest extends TestCase
 
         $userAdmin = User::factory()->create(['isAdmin' => true]);
         $this->actingAs($userAdmin);
-
         $event = Event::factory()->create();
         $this -> assertCount(1, Event::all());
-
         $response = $this -> get(route('edit', $event -> id));
         $response -> assertStatus(200)
                     -> assertViewIs('edit');
+        
+        
+        $user1 = User::factory()->create(['isAdmin' => false]);
+        $this->actingAs($user1);
+        $this -> assertCount(1, Event::all());
+        $response = $this -> get(route('home'));
+        $response -> assertStatus(200)
+                    -> assertViewIs('home');
     }
 
     public function test_an_event_can_be_created() {
