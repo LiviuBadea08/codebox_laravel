@@ -77,7 +77,7 @@
    <div class="col-span-4 text-white font-sans font-bold bg-white min-h-screen pl-7">
        <div class="grid grid-rows-6 grid-flow-col min-h-screen items-center justify-items-start">
            <div class="text-black row-span-4 row-start-2 text-4xl">
-               Iniciar Sesion               
+           {{ __('Iniciar Sesion') }}
                <div class="pt-10 pr-20">
                <form method="POST" action="{{ route('login') }}">
                         @csrf                      
@@ -88,7 +88,14 @@
                        type="text" 
                        name="username" 
                        placeholder="Write your username" 
-                       class="w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"/>                            
+                       class="w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"/>   
+                       <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>  
+                        
+                       @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror                       
                </div>
                <div class="pt-2 pr-20">
                    <label class="text-sm font-sans font-medium">
@@ -99,10 +106,17 @@
                        name="password" 
                        placeholder="Write your password" 
                        class=" w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"/>
+
+                       @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                
                    <a href="" class="text-sm font-sans font-medium text-gray-600 underline">
                        Has olvidado tu contraseña?
                    </a>
-               </div>
+               </div>   
                <!-- Button -->
                <div class="text-sm font-sans font-medium w-full pr-20 pt-14">
                    <button 
