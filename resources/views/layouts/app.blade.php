@@ -43,5 +43,10 @@
             @yield('content')
         </main>
     </div>
+
+    <footer>
+        @component('component.footer')
+        @endcomponent
+    </footer>
 </body>
 </html>
