@@ -44,11 +44,7 @@
         </section>
         <section id="container" class="flex space-x-2 justify-center py-6">
             <div class="contenido pt-2">
-<<<<<<< HEAD
-                <label><input  type="checkbox" id="featured">Destacado</label>
-=======
                 <label><input value="{{$event->fetured}}" type="checkbox" id="featured" >Destacado</label>
->>>>>>> 0b0810c57b5f10a8c96e9c0bb4697e64c3337a70
             </div>
             <div class="contenido marco2">
                 <input value="{{$event->capacity}}" type="number" placeholder="Maximo participantes" max="99" />

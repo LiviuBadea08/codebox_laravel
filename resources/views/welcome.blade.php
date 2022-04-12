@@ -10,10 +10,6 @@
  -->
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9df0ea72370a8765b206ec27fd21a19cc6045547
 <!-- css animacion
 
 body {
