@@ -61,11 +61,16 @@
                 {{ $user->about }}
             </textarea>
           </div>
-
+          <section class="ml-16">
           <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-5" 
           onclick="return confirm('Está seguro que desea realizar estos cambios ?')">
               Actualizar
           </button>
+          <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-5" 
+          onclick="return profile('Está seguro que desea cancelar los cambios ?')">
+              Cancelar
+          </button>
+          </section>
         </form>
 
       </div>

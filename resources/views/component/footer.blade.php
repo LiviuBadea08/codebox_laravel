@@ -1,4 +1,7 @@
 <nav class="new-nav text-white" id="nav">
+    <section>
+        <img src="./facebook.svg" alt="">
+    </section>
     <section class="container__nav nav-space-between ">
         <div class="nav__logo nav-space-between text-withe">
             <a href="/"></a>

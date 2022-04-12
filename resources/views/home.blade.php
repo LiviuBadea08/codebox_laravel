@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<div class="max-w-screen-3xl mx-auto mb-4">
+<div class="max-w-screen-3xl mx-auto mb-4 drop-shadow-2xl">
 
 	<div id="default-carousel" class="relative" data-carousel="slide">
 
@@ -45,7 +45,7 @@
     <div class="flex items-center flex-wrap justify-around mt-3">
     @foreach ($events as $event)
         <!-- Card -->
-        <div class="delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8">
+        <div class="delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8 drop-shadow-2xl">
             <!-- Image Cover -->
             <a href="#">
                 <img src="{{ $event -> image }}" style="width:100%; height:181px" class="w-full rounded shadow"/>
@@ -60,7 +60,7 @@
             <div class="flex items-end justify-between">
                 <a target="_blank" rel="noreferrer noopener" href="#"
                     class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
-                    Ver mas
+                    Ver más
                 </a>
                 <div class="flex items-center flex-col">
                     <p class="text-gray-400 font-light">{{ $event -> date }}</p>
