@@ -21757,7 +21757,7 @@ readers do not read off random characters that represent icons */
 #nav__logo{
     width: 130px;
     height: 31px;
-    background-image: url(/images/Logo.png?a063afe523dc086b98293dce2b64a38e);
+    background-image: url(/images/logo.png?a063afe523dc086b98293dce2b64a38e);
     background-size: cover;
     background-repeat: no-repeat;
     display: block;
