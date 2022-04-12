@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<div class="max-w-screen-2xl mx-auto mb-5">
+<div class="max-w-screen-3xl mx-auto mb-4">
 
 	<div id="default-carousel" class="relative" data-carousel="slide">
 
