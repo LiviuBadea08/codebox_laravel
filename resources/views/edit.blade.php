@@ -41,7 +41,7 @@
         </section>
         <section id="container" class="flex space-x-2 justify-center py-6">
             <div class="contenido pt-2">
-                <label><input value="{{$event->fetured}}" type="checkbox" id="featured" name="featured" checked>Destacado</label>
+                <label><input value="{{$event->fetured}}" type="checkbox" id="featured" >Destacado</label>
             </div>
             <div class="contenido marco2">
                 <input value="{{$event->capacity}}" type="number" placeholder="Maximo participantes" max="99" />

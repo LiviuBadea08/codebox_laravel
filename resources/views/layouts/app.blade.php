@@ -37,6 +37,11 @@
         <main class="">
             @yield('content')
         </main>
+
+        <footer>
+            @component('component.footer')
+            @endcomponent
+        </footer>
     </div>
 </body>
 </html>

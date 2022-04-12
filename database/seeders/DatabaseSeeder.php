@@ -30,15 +30,22 @@ class DatabaseSeeder extends Seeder
             'featured' => true,
         ]);
         Event::factory(15)->create();
-        User::factory(1)->create([
+        User::factory()->create([
             'name' => 'user1',
             'email' => 'user1@gmail.com',
+            
         ]);
 
-        User::factory(1)->create([
+        User::factory()->create([
+            'name' => 'user2',
+            'email' => 'user2@gmail.com',
+        ]);
+
+        User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'isAdmin' => true,
         ]);
     }
+
 }
