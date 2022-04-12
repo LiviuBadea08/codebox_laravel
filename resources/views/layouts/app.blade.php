@@ -24,7 +24,6 @@
 </head>
 <body>
     <div id="app">
-
         @guest
             @component('component.navbar')
             @endcomponent

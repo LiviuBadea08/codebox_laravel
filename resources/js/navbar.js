@@ -19,7 +19,6 @@ icon.addEventListener('click', function(){
 function showLinks(links){
     document.getElementsByTagName('body')[0].classList.add("no-scroll");
     links.style.display = "flex";
-    links.animate({ right: '0' });
     return true;
 }
 

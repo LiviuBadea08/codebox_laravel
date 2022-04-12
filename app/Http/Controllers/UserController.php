@@ -56,9 +56,10 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit()
     {
-        //
+        $user = auth()->user();
+        return view('auth.edit', compact('user'));
     }
 
     /**
@@ -71,6 +72,10 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //
+        $changeUser = request()->except(['_token', '_method']);
+        $user->update($changeUser);
+
+        return redirect()->route('profile');
     }
 
     /**

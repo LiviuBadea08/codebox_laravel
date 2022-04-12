@@ -39,3 +39,5 @@ Route::get('/show/{id}', [EventController::class, 'show'])->name('show');
 
 // USER PROFILE
 Route::get('/auth/profile', [UserController::class, 'show'])->name('profile')->middleware('auth');
+Route::get('/auth/edit', [UserController::class, 'edit'])->name('profile.edit')->middleware('auth');
+Route::patch('/auth/update/{user}', [UserController::class, 'update'])->name('profile.update')->middleware('auth');

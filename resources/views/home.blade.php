@@ -91,9 +91,8 @@
 
     @endforeach
     </div>
-
 </div>
-    <div class="flex justify-around">
+    <div class="flex justify-around mb-5">
         {{ $events -> links() }}
     </div>
 
