@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Event;
 
-
-class EventController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,6 @@ class EventController extends Controller
     public function index()
     {
         //
-        $events = Event::orderBy('date', 'desc')->simplePaginate(6);
-        return view('home', compact('events'));
     }
 
     /**
@@ -29,7 +25,6 @@ class EventController extends Controller
     public function create()
     {
         //
-        return view('create');
     }
 
     /**
@@ -41,65 +36,56 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
-        $newEvent = request()->except('_token');
-
-        Event::create($newEvent);
-
-        return redirect()->route('home');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
-        $event = Event::find($id);
-        return view('show', compact('event'));
+        $user = auth()->user();
+        return view('auth.profile', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        // 
-        
-        $event = Event::find($id);
-        return view('edit', compact('event'));
+        $user = auth()->user();
+        return view('auth.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         //
-        $changeEvent = request()->except(['_token', '_method']);
-        Event::where('id', '=', $id)->update($changeEvent);
-        return redirect()->route('home');
+        $changeUser = request()->except(['_token', '_method']);
+        $user->update($changeUser);
+
+        return redirect()->route('profile');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
-        Event::destroy($id);
-        return redirect()->route('home');
     }
 }
