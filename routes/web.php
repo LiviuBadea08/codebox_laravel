@@ -19,10 +19,10 @@ use App\Http\Controllers\EventController;
     return view('welcome');
 }); */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', [EventController::class, 'index']);
-Route::get('/home', [EventController::class, 'index'])->name('home');
+Route::get('/home', [EventController::class, 'index'])->name('home')->middleware('verified');
 Route::get('/show/{id}', [EventController::class, 'show'])->name('show');
 
 //CRUD Event
