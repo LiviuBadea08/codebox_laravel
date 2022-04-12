@@ -67,7 +67,7 @@
                     <p class="text-gray-400 font-light">Plazas: {{ $event -> capacity }}</p>
                 </div>
                 
-                <a target="_blank" rel="noreferrer noopener" href="#"
+                <a  href="{{ url('subscribe', $event->id) }}"
                     class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
                     Apuntarse
                 </a>

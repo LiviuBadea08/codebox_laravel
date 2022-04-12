@@ -47,7 +47,7 @@ class UserController extends Controller
     public function show()
     {
         $user = auth()->user();
-        return view('auth.profile', compact('user'));
+        return view('profile', compact('user'));
     }
 
     /**
@@ -59,7 +59,7 @@ class UserController extends Controller
     public function edit()
     {
         $user = auth()->user();
-        return view('auth.edit', compact('user'));
+        return view('editProfile', compact('user'));
     }
 
     /**

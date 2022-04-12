@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -101,5 +102,25 @@ class EventController extends Controller
         //
         Event::destroy($id);
         return redirect()->route('home');
+    }
+
+    public function subscribe($id){
+        $user = User::find(Auth::id());
+        $event = Event::find($id);
+
+        $user->event()->attach($event);
+
+        return redirect()->route('home');
+    }
+
+    public function mySubscription(){
+        $myEventUser = [];
+
+        if(Auth::user()){
+            $user = Auth::user();
+            $myEventUser = $user->event;
+        }
+
+        return view('profile', compact('myEventUser'));
     }
 }
