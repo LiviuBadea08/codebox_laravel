@@ -60,7 +60,7 @@ class UserController extends Controller
      */
     public function edit()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         return view('editProfile', compact('user'));
     }
 
