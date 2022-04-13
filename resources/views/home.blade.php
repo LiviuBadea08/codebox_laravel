@@ -5,7 +5,7 @@
     <div class="max-w-screen-2xl mx-auto mb-5">
         <div id="default-carousel" class="relative" data-carousel="slide">
             <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
-                @foreach ($events as $event)
+                @foreach ($featured as $event)
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <div style="background-image: url('{{ $event->image }}'); width:100%;">
                             <img src="{{ $event->image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
