@@ -7,9 +7,9 @@
             <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
                 @foreach ($events as $event)
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        {{-- <div style="background-image: url('{{ $event->image }}'); width:100%;"> --}}
+                        <div style="background-image: url('{{ $event->image }}'); width:100%;"> --}}
                             <img src="{{ $event->image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-                        {{-- </div> --}}
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -55,24 +55,25 @@
                             <p class="text-gray-400 font-light">{{ $event -> date }}</p>
                             <p class="text-gray-400 font-light">Plazas: {{ $event -> capacity }}</p>
                         </div>
-                        <a  href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
-                            Apuntarse
-                        </a>
-                    </div>
-                    @if (Auth::check() && Auth::user()->isAdmin())
-                        <div class="flex justify-end mt-2">
-                            <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
-                            @method ('delete')
-                            @csrf 
-                                <button type="submit" onclick="return confirm('Está seguro que desea eliminar el evento {{$event -> name}}?')" class="mr-10 text-white text-base" >
-                                    <i class="fa-solid fa-trash-can icon_hover"></i>
-                                </button>
-                            </form>
-                            <a href="{{ route('edit', ['id' => $event->id]) }}" class=" text-white px-3 text-base ">
-                                <i class="fa-solid fa-pen-to-square icon_hover"></i>
+                        @if (Auth::check() && Auth::user()->isAdmin())
+                            <div class="flex justify-end mt-2">
+                                <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
+                                @method ('delete')
+                                @csrf 
+                                    <button type="submit" onclick="return confirm('Está seguro que desea eliminar el evento {{$event -> name}}?')" class="mr-10 text-white text-base" >
+                                        <i class="fa-solid fa-trash-can icon_hover"></i>
+                                    </button>
+                                </form>
+                                <a href="{{ route('edit', ['id' => $event->id]) }}" class=" text-white px-1 text-base ">
+                                    <i class="fa-solid fa-pen-to-square icon_hover"></i>
+                                </a>
+                            </div>
+                        @else
+                            <a  href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
+                                Apuntarse
                             </a>
-                        </div>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             @endforeach
         </div>
