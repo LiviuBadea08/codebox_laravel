@@ -114,4 +114,14 @@ class EventController extends Controller
         return redirect()->route('home');
     }
 
+    public function cancelSuscription($id){
+        $user = User::find(Auth::id());
+        $event = Event::find($id);
+
+        $user->event()->detach($event);
+
+        return redirect()->route('profile');
+    }
+
+
 }

@@ -49,7 +49,7 @@
                     </div>
                     <div class="flex items-end justify-between">
                         <a rel="noreferrer noopener" href="{{ route('show', ['id' => $event->id]) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
-                            Ver mas
+                            Ver más
                         </a>
                         <div class="flex items-center flex-col">
                             <p class="text-gray-400 font-light">{{ $event -> date }}</p>

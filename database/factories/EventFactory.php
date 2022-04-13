@@ -24,6 +24,7 @@ class EventFactory extends Factory
             "date" => $this->faker->date(),
             "time" => $this->faker->time(),
             "capacity" => $this->faker->numberBetween($min = 1, $max = 10),
+            "isAvaliable" => $this->faker->boolean(),
             "featured" => $this->faker->boolean(),
         ];
     }

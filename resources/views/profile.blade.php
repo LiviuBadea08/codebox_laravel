@@ -87,7 +87,7 @@
                     </div>
                     <div class="flex items-end justify-between">
                         <a target="_blank" rel="noreferrer noopener" href="{{ route('show', ['id' => $event->id]) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
-                            Ver mas
+                            Ver más
                         </a>
                         <div class="flex items-center flex-col">
                             <p class="text-gray-400 font-light">
@@ -97,7 +97,7 @@
                                 Plazas: {{ $event -> capacity }}
                             </p>
                         </div>
-                        <a  href="ruta desapuntarse" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
+                        <a  href="{{ route('cancelSuscription', ['id' => $event->id]) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
                             Desapuntarse
                         </a>
                     </div>
