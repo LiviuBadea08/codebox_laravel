@@ -60,6 +60,8 @@ class EventSubscriptionTest extends TestCase
     testear que el usuario se puede incribir si el evento no esta completo
     testear que el usuario no se puede incribir si el evento esta completo
 
+    testear si la capacidad del evento disminuye cuando se inscribe un usuario
+
     testear que el usuario se puede incribir si no ha pasado el tiempo de inscripcion
     testear que el usuario no se puede incribir si ha pasado el tiempo de inscripcion
 
