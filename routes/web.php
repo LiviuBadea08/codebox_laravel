@@ -37,11 +37,10 @@ Route::get('/create', [EventController::class, 'create'])->name('create')->middl
 // USER PROFILE
 
 Route::get('/profile', [UserController::class, 'show'])->name('profile')->middleware('auth');
-Route::get('/editProfile', [UserController::class, 'edit'])->name('profile.edit')->middleware('auth');
-Route::patch('/auth/update/{user}', [UserController::class, 'update'])->name('profile.update')->middleware('auth');
+Route::get('/profile/edit', [UserController::class, 'edit'])->name('profile.edit')->middleware('auth');
+Route::patch('/profile/update/{user}', [UserController::class, 'update'])->name('profile.update')->middleware('auth');
 
 // relacion event user
 Route::get('/subscribe/{id}', [EventController::class, 'subscribe'])->name('subscribe')->middleware('auth');
 Route::get('/cancelSuscription/{id}', [EventController::class, 'cancelSuscription'])->name('cancelSuscription')->middleware('auth');
 
-// Route::get('/profile', [EventController::class, 'mySubscription'])->name('mySubscription')->middleware('auth');

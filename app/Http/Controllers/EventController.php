@@ -113,14 +113,5 @@ class EventController extends Controller
         return redirect()->route('home');
     }
 
-    public function mySubscription(){
-        $myEventUser = [];
 
-        if(Auth::user()){
-            $user = Auth::user();
-            $myEventUser = $user->event;
-        }
-
-        return view('profile', compact('myEventUser'));
-    }
 }
