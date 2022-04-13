@@ -18,7 +18,7 @@ class EventSubscriptionTest extends TestCase
 
     use RefreshDatabase;
 
-    public function test_if_non_user_can_subscribe() {
+    public function test_if_guest_cannot_subscribe() {
         $this->withExceptionHandling();
 
         $event = Event::factory()->create();
@@ -28,7 +28,7 @@ class EventSubscriptionTest extends TestCase
             ->assertRedirect(route('login'));
     }
 
-    public function test_loged_user_can_subscribe() {
+    public function test_logged_user_can_subscribe() {
         $this->withExceptionHandling();
 
         $event = Event::factory()->create();
@@ -41,7 +41,7 @@ class EventSubscriptionTest extends TestCase
         $this->assertEquals($user->id, $event->user[0]->id);
     }
 
-    public function test_loged_user_can_cancel_subscription() {
+    public function test_logged_user_can_cancel_subscription() {
         $this->withExceptionHandling();
 
         $event = Event::factory()->create();

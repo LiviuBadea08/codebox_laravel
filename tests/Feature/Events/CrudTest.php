@@ -28,7 +28,7 @@ class CrudTest extends TestCase
                     -> assertViewIs('home');
     }
 
-    public function test_if_fetaured_event_appear_in_carrousel(){
+    public function test_if_fetaured_event_appear_in_home(){
         $this -> withoutExceptionHandling();
 
         Event::factory()->create(['featured' => 1]);
