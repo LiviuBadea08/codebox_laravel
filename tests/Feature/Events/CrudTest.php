@@ -28,6 +28,8 @@ class CrudTest extends TestCase
                     -> assertViewIs('home');
     }
 
+
+
     public function test_an_event_can_be_deleted() {
         $this -> withoutExceptionHandling();
 
@@ -54,6 +56,8 @@ class CrudTest extends TestCase
         $this -> assertCount(1, Event::all());
     }
 
+
+
     public function test_an_event_can_be_updated() {
         $this -> withoutExceptionHandling();
 
@@ -79,6 +83,8 @@ class CrudTest extends TestCase
         $this -> patch(route('update', $event -> id), ['name' => 'New Name',]);
         $this -> assertEquals(Event::first() -> name, 'name', );
     }
+
+
 
     public function test_if_view_edit_is_displayed_correctly() {
         $this -> withoutExceptionHandling();
@@ -107,6 +113,8 @@ class CrudTest extends TestCase
         $response -> assertStatus(302)
                     -> assertRedirect('/home');
     }
+
+
 
     public function test_an_event_can_be_created() {
         $this -> withoutExceptionHandling();
@@ -146,6 +154,8 @@ class CrudTest extends TestCase
         $this -> assertCount(0, Event::all());
     }
 
+
+
     public function test_create_view_is_displayed_correctly() {
         $this -> withoutExceptionHandling();
 
@@ -168,6 +178,8 @@ class CrudTest extends TestCase
                     -> assertRedirect('/home');
     }
 
+
+    
     public function test_view_show_is_ok(){
         $this -> withExceptionHandling();
 
