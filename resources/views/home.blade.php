@@ -7,7 +7,7 @@
             <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
                 @foreach ($events as $event)
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div style="background-image: url('{{ $event->image }}'); width:100%;"> --}}
+                        <div style="background-image: url('{{ $event->image }}'); width:100%;">
                             <img src="{{ $event->image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                         <p class="text-gray-400 font-light text-xs truncate_text"> {{ $event -> description }} </p>
                     </div>
                     <div class="flex items-end justify-between">
-                        <a target="_blank" rel="noreferrer noopener" href="#" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
+                        <a rel="noreferrer noopener" href="{{ route('show', ['id' => $event->id]) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
                             Ver mas
                         </a>
                         <div class="flex items-center flex-col">

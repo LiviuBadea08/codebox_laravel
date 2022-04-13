@@ -86,7 +86,7 @@
                         </p>
                     </div>
                     <div class="flex items-end justify-between">
-                        <a target="_blank" rel="noreferrer noopener" href="#" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
+                        <a target="_blank" rel="noreferrer noopener" href="{{ route('show', ['id' => $event->id]) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
                             Ver mas
                         </a>
                         <div class="flex items-center flex-col">
