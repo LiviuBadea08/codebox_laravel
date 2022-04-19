@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -46,8 +47,9 @@ class UserController extends Controller
      */
     public function show()
     {
-        $user = auth()->user();
-        return view('auth.profile', compact('user'));
+        $user = Auth::user();
+        $myEventUser = $user->event;
+        return view('profile', compact(['myEventUser', 'user']));
     }
 
     /**
@@ -58,8 +60,8 @@ class UserController extends Controller
      */
     public function edit()
     {
-        $user = auth()->user();
-        return view('auth.edit', compact('user'));
+        $user = Auth::user();
+        return view('editProfile', compact('user'));
     }
 
     /**

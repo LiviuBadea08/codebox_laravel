@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        Event::factory()->create([
+        $event = Event::factory()->create([
             'name' => 'Product 1',
             'description' => 'Description 1',
             'price' => '10',
@@ -30,7 +30,8 @@ class DatabaseSeeder extends Seeder
             'featured' => true,
         ]);
         Event::factory(15)->create();
-        User::factory()->create([
+
+        $user = User::factory()->create([
             'name' => 'user1',
             'email' => 'user1@gmail.com',
             
@@ -46,6 +47,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'isAdmin' => true,
         ]);
+
+
+        $user -> event () -> attach ( $event );
     }
+    
 
 }

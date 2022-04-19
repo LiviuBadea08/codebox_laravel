@@ -19,4 +19,8 @@ class Event extends Model
         'capacity',
         'featured',
     ];
+
+    public function user(){
+        return $this->belongsToMany(User::class);
+    }
 }
