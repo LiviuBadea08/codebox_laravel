@@ -20,8 +20,13 @@
                     <span class="nav__text">Registrarse</span>
                 </a>
             </li>
+            
         @endif
+        <li class="nav__button">
+                <a href="{{ route('info') }}" class="nav__link nav__link">
+                    <span class="nav__text">Sobre Codebox</span>
+                </a>
+            </li>
         </ul>
-
     </div>
 </nav>
