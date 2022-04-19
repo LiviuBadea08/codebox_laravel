@@ -12,7 +12,7 @@
             </h3>
             <section class="flex space-x-2 justify-center pb-4">
                 <div class="marco2">
-                    <input type="text" name="img" value="{{$event->image}}">
+                    <input type="text" name="image" value="{{$event->image}}">
                 </div>
             </section>
             <h3 class="flex space-x-2 justify-center font-bold pb-2">
