@@ -20,7 +20,7 @@ use App\Http\Controllers\UserController;
     return view('welcome');
 }); */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', [EventController::class, 'index'])->name('index');
 Route::get('/home', [EventController::class, 'index'])->name('home');
