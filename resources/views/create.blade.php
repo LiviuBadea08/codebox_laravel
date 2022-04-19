@@ -39,7 +39,8 @@
             </section>
             <section id="container" class="flex space-x-2 justify-center py-6">
                 <div class="contenido pt-2 font-bold">
-                    <label><input type="checkbox" name="featured" id="featured">Destacado</label>
+                        <input type="checkbox" name="featured" id="featured" value="1">
+                        <label>Destacado</label>
                 </div>
                 <div class="contenido marco2">
                     <input type="number" name="capacity" id="capacity" placeholder="Maximo participantes" min="1" max="10" />
