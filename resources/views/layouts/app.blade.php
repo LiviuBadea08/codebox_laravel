@@ -32,7 +32,6 @@
 </head>
 <body>
     <div id="app">
-
         @guest
             @component('component.navbar')
             @endcomponent
@@ -43,14 +42,14 @@
             @endcomponent
         @endauth
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
-    </div>
 
-    <footer>
-        @component('component.footer')
-        @endcomponent
-    </footer>
+        <footer>
+            @component('component.footer')
+            @endcomponent
+        </footer>
+    </div>
 </body>
 </html>
