@@ -16,8 +16,13 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name', 150);
+<<<<<<< HEAD
             $table->string('description', 250);
             $table->integer('price');
+=======
+            $table->text('description', 250);
+            $table->integer('price')->nullable();
+>>>>>>> dev
             $table->string('image', 255)->nullable();
             $table->date('date');
             $table->time('time');

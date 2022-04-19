@@ -21562,14 +21562,14 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 @media (min-width: 1536px){
-    .container {
-        max-width: 1293px !important;
-    }
+  .container {
+      max-width: 1293px !important;
   }
+}
     
-    .max-w-screen-sm {
-      max-width: 368px !important;
-    }
+  .max-w-screen-sm {
+    max-width: 368px !important;
+  }
   .max-w-sm {
       max-width: 24rem !important;
   }
@@ -21577,7 +21577,7 @@ readers do not read off random characters that represent icons */
     margin-left: 1.2rem !important;
   }
   .truncate_text{
-    height:52px;
+    height:51px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -21589,6 +21589,13 @@ readers do not read off random characters that represent icons */
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+  }
+  .icon_hover:hover{
+    color: rgb(209 213 219);
+  }
+  .width_description{
+    display: block;
+    width: 336px;
   }
 *{
     padding: 0;
@@ -21616,15 +21623,6 @@ readers do not read off random characters that represent icons */
     border: 1px solid #999999;
     border-radius: 10px;
  }
-
-
-
-
-
-
-
-
-
 
 *{
     padding: 0;
@@ -21664,7 +21662,7 @@ readers do not read off random characters that represent icons */
 /* general */
 .new-nav{
     background: #000000;
-    z-index: 10;
+    z-index: 5000;
     margin: 0%;
 }
 .no-scroll{
@@ -21718,7 +21716,7 @@ readers do not read off random characters that represent icons */
 }
 /* lista para usuario autenticado */
 .nav__list-auth{
-    z-index: 5;
+    z-index: 40;
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
@@ -21757,7 +21755,7 @@ readers do not read off random characters that represent icons */
 #nav__logo{
     width: 130px;
     height: 31px;
-    background-image: url(/images/Logo.png?a063afe523dc086b98293dce2b64a38e);
+    background-image: url(/images/logo.png?a063afe523dc086b98293dce2b64a38e);
     background-size: cover;
     background-repeat: no-repeat;
     display: block;
@@ -21804,12 +21802,12 @@ readers do not read off random characters that represent icons */
     }
     /* lista */
     .nav__list{
-        z-index: 5;
+        z-index: 40;
         flex-direction: column;
         align-items: flex-end;
         position: absolute;
         background-color: #000000c7;
-        top: 51.9px;
+        top: 50.9px;
         /* right: -40%; */
         right: 0%;
         width: 180px;
@@ -21839,5 +21837,16 @@ readers do not read off random characters that represent icons */
     }
 } 
 
+/* scroll bar */
+
+body::-webkit-scrollbar{
+    width: 9px;
+    background-color: black;
+}
+body::-webkit-scrollbar-thumb{
+    width: 9px;
+    background-color: #00d295;
+    border-radius: 5px;
+}
 
 

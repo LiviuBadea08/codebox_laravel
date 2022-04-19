@@ -19,6 +19,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'address',
+        'about',
+        'picture',
         'email',
         'password',
         'isAdmin',
@@ -42,4 +45,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin(){
+        if ($this->isAdmin){
+            return true; 
+    }
+    
+        return false; 
+    }
+
+    public function event(){
+        return $this->belongsToMany(Event::class);
+    }
 }
