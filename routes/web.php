@@ -40,7 +40,7 @@ Route::get('/create', [EventController::class, 'create'])->name('create')->middl
 Route::get('/profile', [UserController::class, 'show'])->name('profile')->middleware('auth');
 Route::get('/profile/edit', [UserController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::patch('/profile/update/{user}', [UserController::class, 'update'])->name('profile.update')->middleware('auth');
-Route::get('/info', [HomeController::class, 'info'])->name('info')->middleware('auth');
+Route::get('/info', [HomeController::class, 'info'])->name('info');
 
 // relacion event user
 Route::get('/subscribe/{id}', [EventController::class, 'subscribe'])->name('subscribe')->middleware('auth');
