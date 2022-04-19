@@ -39,7 +39,7 @@
             </section>
             <section id="container" class="flex space-x-2 justify-center py-6">
                 <div class="contenido pt-2 font-bold">
-                        <input type="checkbox" name="featured" id="featured" value="1">
+                        <input {{($event->featured) ? "checked" : ""}} type="checkbox" name="featured" id="featured">
                         <label>Destacado</label>
                 </div>
                 <div class="contenido marco2">
