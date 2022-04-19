@@ -80,7 +80,6 @@
             @endforeach
         </div>
     </div>
-<<<<<<< HEAD
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 </div>
 
@@ -144,8 +143,6 @@
     <!-- boton create pendiente de estilizar -->
 
 </div>
-=======
->>>>>>> dev
     <div class="flex justify-around mb-5">
         {{ $events -> links() }}
     </div>
