@@ -36,13 +36,19 @@
             @endauth
         </header>
 
-        <main class="">
+        <main>
             @yield('content')
         </main>
-
         <footer>
+        @guest
             @component('component.footer')
             @endcomponent
+        @endguest
+
+        @auth
+            @component('component.footer')
+            @endcomponent
+        @endauth
         </footer>
     </div>
 </body>
