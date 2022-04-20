@@ -51,7 +51,7 @@
             <div class="contenido pt-2 font-bold">
                 <label for="featured">
                     <input {{ ($event -> fetaured) ? "checked" : ""}}  name="featured" type="checkbox" id="featured" />
-                    Destacado {{$event->featured}}
+                    Destacado
                 </label>
             </div>
         </section>
