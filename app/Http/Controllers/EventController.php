@@ -130,13 +130,21 @@ class EventController extends Controller
         $myEvent = $this->myEvents()->where('id', $id)->first();
         
         switch($myEvent){
-            case true:
-                return redirect()->route('profile');
-                break;
-
             case false:
                 $user->event()->attach($event);
-                return redirect()->route('home');
+                return back()->with('alert', [
+                    'type' => 'success',
+                    'message' => "Inscripción realizada exitosamente",
+                    'icon' => 'fa-solid fa-file-pen',
+                ]);
+                break;
+
+            case true:
+                return back()->with('alert', [
+                    'type' => 'warning',
+                    'message' => "Ya estas inscrito en este Evento",
+                    'icon' => 'fa-solid fa-circle-exclamation',
+                ]);
                 break;
         }
     }
