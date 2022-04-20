@@ -75,7 +75,14 @@ class EventController extends Controller
         // 
         
         $event = Event::find($id);
-        return view('edit', compact('event'));
+        $checked = '';
+        if ($event['featured']) {
+            $checked = 'checked';
+        } else {
+            $checked = '';
+        }
+        return view('edit', compact(['event', 'checked']));
+        
     }
 
     /**

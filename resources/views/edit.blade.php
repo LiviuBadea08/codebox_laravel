@@ -50,7 +50,7 @@
         <section id="container" class="flex space-x-2 justify-center py-6">
             <div class="contenido pt-2 font-bold">
                 <label for="featured">
-                    <input {{ ($event -> fetaured) ? "checked" : ""}}  name="featured" type="checkbox" id="featured" />
+                    <input {{$checked}}  name="featured" type="checkbox" id="featured" >
                     Destacado
                 </label>
             </div>
