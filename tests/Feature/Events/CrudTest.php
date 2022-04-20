@@ -28,6 +28,17 @@ class CrudTest extends TestCase
                     -> assertViewIs('home');
     }
 
+    public function test_if_fetaured_event_appear_in_home(){
+        $this -> withoutExceptionHandling();
+
+        Event::factory()->create(['featured' => 1]);
+
+        $response = $this -> get('home');
+
+        $response -> assertStatus(200)
+                    -> assertViewHas('featured');
+    }
+
 
 
     public function test_an_event_can_be_deleted() {
@@ -139,7 +150,7 @@ class CrudTest extends TestCase
         $this -> withoutExceptionHandling();
 
         $user1 = User::factory()->create(['isAdmin' => false]);
-        $this->actingAs($user1);
+        $this -> actingAs($user1);
 
         $this -> post(route('store'), [
             'name' => 'New Event',
@@ -160,7 +171,7 @@ class CrudTest extends TestCase
         $this -> withoutExceptionHandling();
 
         $userAdmin = User::factory()->create(['isAdmin' => true]);
-        $this->actingAs($userAdmin);
+        $this -> actingAs($userAdmin);
 
         $response = $this -> get(route('create'));
         $response -> assertStatus(200)
@@ -171,7 +182,7 @@ class CrudTest extends TestCase
         $this -> withoutExceptionHandling();
 
         $user1 = User::factory()->create(['isAdmin' => false]);
-        $this->actingAs($user1);
+        $this -> actingAs($user1);
 
         $response = $this -> get(route('create'));
         $response -> assertStatus(302)
@@ -184,8 +195,9 @@ class CrudTest extends TestCase
         $this -> withExceptionHandling();
 
         $event = Event::factory()->create();
+
         $response = $this->get(route('show', $event->id));
-        $response->assertStatus(200)
+        $response -> assertStatus(200)
                 ->assertSee($event -> title);
     }
 }

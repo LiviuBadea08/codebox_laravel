@@ -21717,8 +21717,8 @@ readers do not read off random characters that represent icons */
 }
 .container__nav{
     display: flex;    
-    max-width: 1600px;
-    width: 95%;
+    max-width: 1850px;
+    width: 100%;
     margin: 0 auto;
     padding-top: 2px;
     padding-bottom: 1px; 

@@ -38,7 +38,7 @@
         <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     </div>
 
-    <div class="container">
+    <div class=" container mx-auto">
         @if (Auth::check() && Auth::user()->isAdmin())
             <a href="{{ route('create') }}" class="bg-gray-900 text-white px-4 py-2 rounded-full m-4">
                 <i class="fa-solid fa-plus-circle"></i>
