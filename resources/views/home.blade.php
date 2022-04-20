@@ -2,7 +2,7 @@
 
 @section ('content')
 
-    <div class="max-w-screen-2xl mx-auto mb-5">
+    <div class="w-full mx-auto mb-5">
         <div id="default-carousel" class="relative" data-carousel="slide">
             <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
                 @foreach ($featured as $event)
@@ -29,7 +29,7 @@
         <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     </div>
 
-    <div class="container">
+    <div class=" container mx-auto">
         @if (Auth::check() && Auth::user()->isAdmin())
             <a href="{{ route('create') }}" class="bg-gray-900 text-white px-4 py-2 rounded-full m-4">
                 <i class="fa-solid fa-plus-circle"></i>

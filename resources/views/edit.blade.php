@@ -1,34 +1,29 @@
 @extends('layouts.app')
 @section('content')
-
     <main>
-
         <form method="post" action="{{route('update', $event->id)}}">
             @method('patch')
             @csrf
-            <h3 class="flex space-x-2 justify-center">
+            <div class="flex space-x-2 pl-16 font-bold">
+                <h1>Editar un evento</h1>
+            </div>
+            <h3 class="flex space-x-2 justify-center pt-4 pb-2 font-bold">
                 Imagen
             </h3>
-            <section class="flex space-x-2 justify-center pb-2">
-                <div class="marco1">
-                    <label for="image">
-                        <img src="./media/plus.png" style="cursor:pointer">
-                    </label>
-                    <input type="file" id="image" name="image" value="{{$event->image}}" accept=".jpg, .jpeg, .png" multiple style="display:none">
-                </div>
+            <section class="flex space-x-2 justify-center pb-4">
                 <div class="marco2">
-                    <img src="{{$event->image}}" alt="">
+                    <input type="text" name="image" value="{{$event->image}}">
                 </div>
             </section>
-            <h3 class="flex space-x-2 justify-center">
+            <h3 class="flex space-x-2 justify-center font-bold pb-2">
                 Titulo
             </h3>
-            <section class="flex space-x-2 justify-center pb-2">
+            <section class="flex space-x-2 justify-center pb-4">
                 <div class="marco2">
                     <input type="text" class="form-control" id="name" name="name" value="{{$event->name}}">
                 </div>
             </section>
-            <h3 class="flex space-x-2 justify-center">
+            <h3 class="flex space-x-2 justify-center font-bold pb-2">
                 Descripción
             </h3>
             <section class="flex space-x-2 justify-center pb-6">
@@ -38,21 +33,21 @@
                     </textarea>
                 </div>
             </section>
-            <h3 class="flex space-x-2 justify-center">
+            <h3 class="flex space-x-2 justify-center font-bold pb-2">
                 Fecha y hora
             </h3>
             <section class="flex space-x-2 justify-center">
                 <div>
                     <label for="date"></label>
-                    <input type="date" id="date" name="date" value="{{$event->date}}" min="2022-04-06" max="2022-12-31">
+                    <input type="date" id="date" name="date" value="{{$event->date}}" min="2022-01-01" max="2022-12-31">
                 </div>
                 <div>
                     <input value="{{$event->time}}" type="time" name="time" id="time">
                 </div>
             </section>
             <section id="container" class="flex space-x-2 justify-center py-6">
-                <div class="contenido pt-2">
-                    <label><input value="{{$event->fetured}}" type="checkbox" id="featured" >Destacado</label>
+                <div class="contenido pt-2 font-bold">
+                    <label><input {{($event->fetaured) ? "checked" : ""}} type="checkbox" id="featured">Destacado</label>
                 </div>
                 <div class="contenido marco2">
                     <input value="{{$event->capacity}}" type="number" placeholder="Maximo participantes" max="99" />
@@ -66,8 +61,6 @@
                     Cancelar
                 </a>
             </div>
-        </form>
-
+    </form>
     </main>
-
 @endsection
