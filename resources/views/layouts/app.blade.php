@@ -33,7 +33,6 @@
             @component('component.navbarauth')
             @endcomponent
         @endauth
-
         <main class="">
             @yield('content')
         </main>

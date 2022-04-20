@@ -3,14 +3,23 @@
 @section ('content')
 
     <div class="max-w-screen-2xl mx-auto mb-5">
-        <div id="default-carousel" class="relative" data-carousel="slide">
+        <div id="default-carousel" class="relative" data-carousel="static">
             <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
                 @foreach ($featured as $event)
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div style="background-image: url('{{ $event->image }}'); width:100%;">
-                            <img src="{{ $event->image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                    <a href="{{ route('show', ['id' => $event->id]) }}" class="content-slide hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="slide" style="background-image: url('{{ $event->image }}');"></div>
+                        <div class="flex items-center flex-col h-full justify-end">
+                            <div class="flex items-center flex-col slide-title">
+                                <h1 class="sm:mb-2 text-base font-extrabold leading-10 tracking-tight sm:text-3xl sm:mt-5 sm:leading-none md:text-3xl">
+                                    {{ $event-> name }}
+                                </h1>
+                                <p class="slide-description text-center leading-relaxed">
+                                    {{ $event -> description}}
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                        {{-- <img src="{{ $event->image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."> --}}
+                    </a>
                 @endforeach
             </div>
             <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -38,7 +47,7 @@
         <div class="flex items-center flex-wrap justify-around mt-3">
             @foreach ($events as $event)
                 <div class="delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8">
-                    <a href="#">
+                    <a href="{{ route('show', ['id' => $event->id]) }}">
                         <img src="{{ $event -> image }}" style="width:100%; height:181px" class="w-full rounded shadow"/>
                     </a>
                     <h3 class="text-gray-200 font-bold mt-3 text-center truncate_title">
