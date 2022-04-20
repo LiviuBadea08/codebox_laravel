@@ -1,4 +1,4 @@
-<nav class="new-nav text-white" id="nav">
+<nav class="h-12 bg-red-500">
     <section class="flex justify-items-center justify-evenly">
         <img src="/resources/img/facebook.svg" alt="facebook">
         <img src="/resources/img/instagram.jpg" alt="instagram">

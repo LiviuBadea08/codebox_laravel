@@ -94,8 +94,7 @@
                                         Plazas: {{ $event -> capacity }}
                                     </p>
                                 </div>
-                                <a  href="{{ route('cancelSuscription', ['id' => $event->id]) }}" class="border-3 border-pink-500 hover:bg-pink-500 text-white rounded-full px-7 py-1">
-                                    Desapuntarse
+                                <a  href="{{ route('cancelSuscription', ['id' => $event->id]) }}" class="border-3 border-pink-500 hover:bg-pink-500 text-white rounded-full px-6 py-1" onclick="return confirm('Está seguro que desea desapuntarse del evento ?')">Desapuntarse
                                 </a>
                             </div>
                         </div>
