@@ -88,8 +88,9 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $changeEvent = request()->except(['_token', '_method', 'featured']);
+        $changeEvent = request()->except(['_token', '_method']);
         $changeEvent['featured'] = $request->boolean('featured');
+
         Event::where('id', '=', $id)->update($changeEvent);
         return redirect()->route('home');
     }
@@ -106,6 +107,19 @@ class EventController extends Controller
         Event::destroy($id);
         return redirect()->route('home');
     }
+
+        /* public function featured()
+    {
+        $featured_events = [];
+        $events = Event::all();
+        foreach($events as $event){
+            if($event->featured) {
+                array_push($featured_events, $event);
+            }
+        }
+        return view('highlighted', compact('highlighted_events'));
+    } 
+ */
 
     public function subscribe($id){
         $user = User::find(Auth::id());
@@ -124,6 +138,4 @@ class EventController extends Controller
 
         return redirect()->route('profile');
     }
-
-
 }

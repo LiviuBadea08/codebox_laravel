@@ -24,15 +24,17 @@
 </head>
 <body>
     <div id="app">
-        @guest
-            @component('component.navbar')
-            @endcomponent
-        @endguest
+        <header>
+            @guest
+                @component('component.navbar')
+                @endcomponent
+            @endguest
 
-        @auth
-            @component('component.navbarauth')
-            @endcomponent
-        @endauth
+            @auth
+                @component('component.navbarauth')
+                @endcomponent
+            @endauth
+        </header>
 
         <main class="">
             @yield('content')
