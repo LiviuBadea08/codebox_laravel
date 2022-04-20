@@ -75,7 +75,14 @@ class EventController extends Controller
         // 
         
         $event = Event::find($id);
-        return view('edit', compact('event'));
+        $checked = '';
+        if ($event['featured']) {
+            $checked = 'checked';
+        } else {
+            $checked = '';
+        }
+        return view('edit', compact(['event', 'checked']));
+        
     }
 
     /**
@@ -88,8 +95,9 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $changeEvent = request()->except(['_token', '_method', 'featured']);
+        $changeEvent = request()->except(['_token', '_method']);
         $changeEvent['featured'] = $request->boolean('featured');
+
         Event::where('id', '=', $id)->update($changeEvent);
         return redirect()->route('home');
     }
@@ -141,6 +149,4 @@ class EventController extends Controller
 
         return redirect()->route('profile');
     }
-
-
 }
