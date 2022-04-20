@@ -78,11 +78,9 @@
                                 </a>
                             </div>
                         @else
-                            <button class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1" onclick= "return confirm('Subscripción completada correctamente a {{$event->name}}. Puede gestionar sus suscripciones desde su perfil.')" >
-                                <a href="{{ url('subscribe', $event->id) }}">
-                                    Apuntarse
-                                </a>
-                            </button>
+                            <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1" onclick= "return confirm('Subscripción completada correctamente a {{$event->name}}. Puede gestionar sus suscripciones desde su perfil.')" >
+                                Apuntarse
+                            </a>
                         @endif
                     </div>
                 </div>

@@ -107,13 +107,30 @@ class EventController extends Controller
         return redirect()->route('home');
     }
 
+    public function myEvents()
+    {
+        $user = Auth::user();
+        $myEvent = $user->event;
+
+        return $myEvent;
+    }
+
     public function subscribe($id){
         $user = User::find(Auth::id());
         $event = Event::find($id);
 
-        $user->event()->attach($event);
+        $myEvent = $this->myEvents()->where('id', $id)->first();
+        
+        switch($myEvent){
+            case true:
+                return redirect()->route('profile');
+                break;
 
-        return redirect()->route('home');
+            case false:
+                $user->event()->attach($event);
+                return redirect()->route('home');
+                break;
+        }
     }
 
     public function cancelSuscription($id){
