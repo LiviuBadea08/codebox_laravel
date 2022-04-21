@@ -24,31 +24,22 @@
 </head>
 <body>
     <div id="app">
-        <header>
-            @guest
-                @component('component.navbar')
-                @endcomponent
-            @endguest
-
-            @auth
-                @component('component.navbarauth')
-                @endcomponent
-            @endauth
-        </header>
-
-        <main>
-            @yield('content')
-        </main>
-        <footer>
         @guest
-            @component('component.footer')
+            @component('component.navbar')
             @endcomponent
         @endguest
 
         @auth
-            @component('component.footer')
+            @component('component.navbarauth')
             @endcomponent
         @endauth
+        <main class="">
+            @yield('content')
+        </main>
+
+        <footer>
+            @component('component.footer')
+            @endcomponent
         </footer>
     </div>
 </body>

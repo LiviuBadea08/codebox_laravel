@@ -115,26 +115,38 @@ class EventController extends Controller
         return redirect()->route('home');
     }
 
-        /* public function featured()
+    public function myEvents()
     {
-        $featured_events = [];
-        $events = Event::all();
-        foreach($events as $event){
-            if($event->featured) {
-                array_push($featured_events, $event);
-            }
-        }
-        return view('highlighted', compact('highlighted_events'));
-    } 
- */
+        $user = Auth::user();
+        $myEvent = $user->event;
+
+        return $myEvent;
+    }
 
     public function subscribe($id){
         $user = User::find(Auth::id());
         $event = Event::find($id);
 
-        $user->event()->attach($event);
+        $myEvent = $this->myEvents()->where('id', $id)->first();
+        
+        switch($myEvent){
+            case false:
+                $user->event()->attach($event);
+                return back()->with('alert', [
+                    'type' => 'success',
+                    'message' => "Inscripción realizada exitosamente",
+                    'icon' => 'fa-solid fa-file-pen',
+                ]);
+                break;
 
-        return redirect()->route('home');
+            case true:
+                return back()->with('alert', [
+                    'type' => 'warning',
+                    'message' => "Ya estas inscrito en este Evento",
+                    'icon' => 'fa-solid fa-circle-exclamation',
+                ]);
+                break;
+        }
     }
 
     public function cancelSuscription($id){
