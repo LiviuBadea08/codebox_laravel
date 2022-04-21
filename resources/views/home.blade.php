@@ -3,7 +3,7 @@
 @section ('content')
     {{-- Alertas --}}
     @if(session('alert'))
-    <div class="fixed container z-30 left-0 right-0 bottom-0 sm:w-3/5">
+    <div class="fixed container z-30 top-50 left-0 right-0 bottom-0 w-full sm:w-3/5 fixed container z-30 left-0 right-0 top-0">
         <div class="alert alert-{{ session('alert')['type'] }} alert-dismissible fade show h5" role="alert">
             <i class="{{ session('alert')['icon'] }} sm:mr-4"></i><strong>{{ session('alert')['message'] }}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
@@ -89,7 +89,7 @@
                                 </a>
                             </div>
                         @else
-                            <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1" onclick= "return confirm('Subscripción completada correctamente a {{$event->name}}. Puede gestionar sus suscripciones desde su perfil.')" >
+                            <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
                                 Apuntarse
                             </a>
                         @endif
