@@ -12,25 +12,43 @@
         </div>
     </div>
     @endif
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <img class="imgShow" src="{{ $event->img }}">
+    <!--PRUEBA-->
+    <section class="flex justify-center m-6">
+    <div class="delay-50 duration-100 bg-gray-900 p-4 rounded-lg h-96 max-w-sm group mb-8">
+                    <a href="{{ route('show', ['id' => $event->id]) }}">
+                        <img src="{{ $event -> image }}" style="width:100%; height:181px" class="w-full rounded shadow"/>
+                    </a>
+                    <h3 class="text-gray-200 font-bold mt-3 text-center truncate_title">
+                        {{ $event -> name }}
+                    </h3>
+                    <div class="mt-2 mb-1 width_description">
+                        <p class="text-gray-400 font-light text-xs truncate_text"> {{ $event -> description }} </p>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $event->name }}</h5>
-                        <div class="d-flex flex-row flex-wrap align-items-center">
-                            <h6 class="extraShow font-wight-bold mr-2"></h6>
-                            <p class="card-title extraShow font-eight-bold txtPrice">{{ $event->price }}</p>
-                            <h6 class="card-title font-weight-bold">Descripcion:</h6>
-                            <p class="card-title extraShow">{{ $event->description }}</p>
-                    </div>
+                    <div class="flex items-end justify-between">
+                        <div class="flex items-center flex-col">
+                            <p class="text-gray-400 font-light">{{ $event -> date }}</p>
+                            <p class="text-gray-400 font-light">Plazas: {{ $event -> capacity }}</p>
+                        </div>
+                        @if (Auth::check() && Auth::user()->isAdmin())
+                            <div class="flex justify-end mt-2">
+                                <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
+                                @method ('delete')
+                                @csrf 
+                                    <button type="submit" onclick="return confirm('Está seguro que desea eliminar el evento {{$event -> name}}?')" class="mr-10 text-white text-base" >
+                                        <i class="fa-solid fa-trash-can icon_hover"></i>
+                                    </button>
+                                </form>
+                                <a href="{{ route('edit', ['id' => $event->id]) }}" class=" text-white px-1 text-base ">
+                                    <i class="fa-solid fa-pen-to-square icon_hover"></i>
+                                </a>
+                            </div>
+                        @else
+                            <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
+                                Apuntarse
+                            </a>
+                        @endif
                 </div>
-            </div>
         </div>
-    </div>
+</section>
 
-    
 @endsection
