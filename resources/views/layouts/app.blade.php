@@ -20,15 +20,7 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<<<<<<< HEAD
-    <link href="{{ asset('css/cards.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-=======
->>>>>>> 0b0810c57b5f10a8c96e9c0bb4697e64c3337a70
-
+    
 </head>
 <body>
     <div id="app">
