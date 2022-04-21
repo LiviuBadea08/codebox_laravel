@@ -142,7 +142,7 @@ class EventController extends Controller
             case true:
                 return back()->with('alert', [
                     'type' => 'warning',
-                    'message' => "Ups! Ya se inscribió en este Evento",
+                    'message' => "Ups! Ya te inscribiste en este Evento",
                     'icon' => 'fa-solid fa-circle-exclamation',
                 ]);
                 break;
