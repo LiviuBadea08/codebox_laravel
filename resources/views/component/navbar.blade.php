@@ -24,7 +24,7 @@
         @endif
         <li class="nav__button">
                 <a href="{{ route('info') }}" class="nav__link nav__link">
-                    <span class="nav__text">Quiénes somos</span>
+                    <span class="nav__text">Contáctanos</span>
                 </a>
             </li>
         </ul>

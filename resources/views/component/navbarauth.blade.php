@@ -20,7 +20,7 @@
             </li>
             <li class="nav__button-auth">
                 <a href="{{ route('info') }}" class="nav__link nav__link-auth">
-                    <span class="nav__text">Quiénes somos</span>
+                    <span class="nav__text">Contáctanos</span>
                 </a>
             </li>
             <li class="nav__button-auth">
