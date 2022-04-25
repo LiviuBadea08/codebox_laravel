@@ -22,8 +22,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
 </head>
-<body>
-    <div id="app">
+<body class="flex flex-col h-screen justify-between">
+    <div class="h-auto" id="app">
         @guest
             @component('component.navbar')
             @endcomponent
@@ -33,11 +33,11 @@
             @component('component.navbarauth')
             @endcomponent
         @endauth
-        <main class="">
+        <main class="mb-auto h-auto">
             @yield('content')
         </main>
 
-        <footer>
+        <footer class="h-auto inset-x-0 bottom-0">
             @component('component.footer')
             @endcomponent
         </footer>
