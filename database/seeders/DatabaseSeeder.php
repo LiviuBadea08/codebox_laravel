@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
         $user = User::factory()->create([
             'name' => 'user1',
             'email' => 'user1@gmail.com',
+<<<<<<< HEAD
             
         ]);
 
@@ -46,6 +47,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'isAdmin' => true,
+=======
+>>>>>>> 062433b2ff2c2a3ba381ecaeadfc166836622916
         ]);
 
 
