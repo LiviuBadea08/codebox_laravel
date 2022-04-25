@@ -137,6 +137,11 @@ class EventController extends Controller
         $user = User::find(Auth::id());
         $event = Event::find($id);
 
+        //decrease stock by 1 when user subscribe to event
+        $event->stock = $event->stock - 1;
+        $event->save();
+    
+
         $myEvent = $this->myEvents()->where('id', $id)->first();
         
         switch($myEvent){
@@ -164,6 +169,9 @@ class EventController extends Controller
         $event = Event::find($id);
 
         $user->event()->detach($event);
+
+        $event->stock = $event->stock + 1;
+        $event->save();
 
         return redirect()->route('profile');
     }
