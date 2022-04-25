@@ -22,7 +22,10 @@ return new class extends Migration
             $table->date('date');
             $table->time('time');
             $table->integer('capacity');
+            $table->integer('stock');
             $table->boolean('featured')->default(false);
+            $table->boolean('finished')->default(false);
+            $table->boolean('full')->default(false);
             $table->timestamps();
         });
     }

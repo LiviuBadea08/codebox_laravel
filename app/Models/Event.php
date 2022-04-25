@@ -17,6 +17,9 @@ class Event extends Model
         'date',
         'time',
         'capacity',
+        'stock',
+        'finished',
+        'full',
         'featured',
     ];
 
