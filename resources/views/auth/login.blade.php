@@ -1,12 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div class="container mt-5 mb-5">
-    <div></div>
     <div class="row justify-content-center">
         <div class="col-md-8">
                 <h1 class="mb-3 row justify-content-center font-sans font-bold text-4xl 36px" >Iniciar Sesion</h1>
-                
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

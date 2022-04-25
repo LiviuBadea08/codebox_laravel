@@ -78,7 +78,7 @@
                         </a>
                         <div class="flex items-center flex-col">
                             <p class="text-gray-400 font-light">{{ $event -> date }}</p>
-                            <p class="text-gray-400 font-light">Plazas: {{ $event -> capacity }}</p>
+                            <p class="text-gray-400 font-light">Plazas: {{ $event -> stock }}</p>
                         </div>
                         @if (Auth::check() && Auth::user()->isAdmin())
                             <div class="flex justify-end mt-2">
