@@ -13,7 +13,7 @@
                             <div class="col-md-6">
                                 <input placeholder="Escribe tu usuario" class="w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans" class=" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                              
+                            
                             </div>
                         </div>
 

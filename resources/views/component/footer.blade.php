@@ -1,5 +1,4 @@
-<footer class="text-center text-white" style="background-color: #34D399
-;">
+<footer class="text-center text-white" style="background-color: #34D399">
   <div class="container pt-6">
     <div class="flex justify-center mb-6">
       <a href="https://www.facebook.com" class="mr-9 text-gray-800">
