@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
+//si un usuario se inscribe dos veces al mismo evento el stock sigue bajando (hay que arreglarlo!)
 {
     /**
      * Display a listing of the resource.
