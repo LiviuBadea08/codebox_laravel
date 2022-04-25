@@ -73,7 +73,7 @@
                         <p class="text-gray-400 font-light text-xs truncate_text"> {{ $event -> description }} </p>
                     </div>
                     <div class="flex items-end justify-between">
-                        <a rel="noreferrer noopener" href="{{ route('show', ['id' => $event->id]) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
+                        <a rel="noreferrer noopener" href="{{ route('show', ['id' => $event->id]) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
                             Ver más
                         </a>
                         <div class="flex items-center flex-col">
@@ -94,7 +94,7 @@
                                 </a>
                             </div>
                         @else
-                            <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-7 py-1">
+                            <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
                                 Apuntarse
                             </a>
                         @endif
