@@ -71,7 +71,7 @@
                 <div class="flex items-center flex-wrap justify-around mt-3">
                     @foreach ($myEventUser as $event)
                         <div class="delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8">
-                            <a href="#">
+                            <a href="{{ route('show', ['id' => $event->id]) }}">
                                 <img src="{{ $event -> image }}" style="width:100%; height:181px" class="w-full rounded shadow"/>
                             </a>
                             <h3 class="text-gray-200 font-bold mt-3 text-center truncate_title">
@@ -91,7 +91,7 @@
                                         {{ $event -> date }}
                                     </p>
                                     <p class="text-gray-400 font-light">
-                                        Plazas: {{ $event -> capacity }}
+                                        Plazas: {{ $event -> stock }}
                                     </p>
                                 </div>
                                 <a  href="{{ route('cancelSuscription', ['id' => $event->id]) }}" class="border-3 border-pink-500 hover:bg-pink-500 text-white rounded-full px-6 py-1" onclick="return confirm('Está seguro que desea desapuntarse del evento ?')">Desapuntarse
