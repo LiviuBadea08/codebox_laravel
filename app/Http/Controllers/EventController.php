@@ -108,10 +108,20 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function deleteRegisteredUser($id)
+    {
+        $event = Event::find($id);
+        $registered = $event->user;
+
+        $event->user()->detach($registered);
+    }
+    
     public function destroy($id)
     {
-        //
+        $this->deleteRegisteredUser($id);
         Event::destroy($id);
+
         return redirect()->route('home');
     }
 
