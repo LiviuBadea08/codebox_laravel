@@ -1,103 +1,15 @@
 @extends('layouts.app')
 
-<!-- html animacion
+@section('content')
+
 
 <div class="animation">
         <h1 class="heading-primary">
             <span class="logo"><img src="./img/Logo.png"></span>
             <span class="phrase">Cursos al alcance de todos</span>
         </h1>
- -->
+</div>
 
+<script src="./js/welcome.js"></script>
 
-<!-- css animacion
-
-body {
-  background-image: url("./img/back.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.animation {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-
-  backface-visibility: hidden;
-  margin-bottom: 6rem;
-}
-
-.logo {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
-
-.phrase {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 17.5px;
-
-  animation: moveInRight 1s ease-out;
-}
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-
-  80% {
-    transform: translateX(1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-
-  80% {
-    transform: translateX(-1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-
- -->
+@endsection

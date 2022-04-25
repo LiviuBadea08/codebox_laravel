@@ -34,3 +34,52 @@
     display: block;
     width: 336px;
   }
+  .content-slide{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color:white;
+  }
+
+  .content-slide:hover{
+    color: white;
+  }
+  
+  .slide{
+    width:100%; 
+    height:100%;
+    z-index: -1;
+
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-position: center;
+  }
+
+  .slide-title{
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+  }
+
+  .slide-description{
+    font-size: 16px;
+    max-width: 44%;
+    padding-bottom: 1em;
+    height:80px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    margin-bottom: 1em;
+  }
+
+  @media (max-width: 415px) {
+    .slide-description{
+      max-width: 90%;
+      font-size: 14px;
+      height: 40px;
+      -webkit-line-clamp: 2;
+      margin-bottom: 2em;
+    }
+  }

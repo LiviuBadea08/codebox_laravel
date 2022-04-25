@@ -15,14 +15,17 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 150);
-            $table->text('description', 250);
+            $table->string('name', 255);
+            $table->text('description', 255);
             $table->integer('price')->nullable();
             $table->string('image', 255)->nullable();
             $table->date('date');
             $table->time('time');
             $table->integer('capacity');
+            $table->integer('stock');
             $table->boolean('featured')->default(false);
+            $table->boolean('finished')->default(false);
+            $table->boolean('full')->default(false);
             $table->timestamps();
         });
     }

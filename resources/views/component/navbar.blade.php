@@ -10,7 +10,7 @@
         @if (Route::has('login'))
             <li class="nav__button">
                 <a href="{{ route('login') }}" class="nav__link">
-                    <span class="nav__text">Iniciar Sesion</span>
+                    <span class="nav__text">Iniciar Sesión</span>
                 </a>
             </li>
         @endif
@@ -20,8 +20,13 @@
                     <span class="nav__text">Registrarse</span>
                 </a>
             </li>
+            
         @endif
+        <li class="nav__button">
+                <a href="{{ route('info') }}" class="nav__link nav__link">
+                    <span class="nav__text">Contáctanos</span>
+                </a>
+            </li>
         </ul>
-
     </div>
 </nav>

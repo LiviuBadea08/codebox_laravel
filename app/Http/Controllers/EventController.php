@@ -19,7 +19,8 @@ class EventController extends Controller
     {
         //
         $events = Event::orderBy('date', 'desc')->simplePaginate(6);
-        return view('home', compact('events'));
+        $featured = Event::all()->where('featured', 1);
+        return view('home', compact(['events', 'featured']));
     }
 
     /**
@@ -42,7 +43,8 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
-        $newEvent = request()->except('_token');
+        $newEvent = request()->except(['_token', 'featured']);
+        $newEvent['featured'] = $request->boolean('featured');
 
         Event::create($newEvent);
 
@@ -73,7 +75,14 @@ class EventController extends Controller
         // 
         
         $event = Event::find($id);
-        return view('edit', compact('event'));
+        $checked = '';
+        if ($event['featured']) {
+            $checked = 'checked';
+        } else {
+            $checked = '';
+        }
+        return view('edit', compact(['event', 'checked']));
+        
     }
 
     /**
@@ -87,6 +96,8 @@ class EventController extends Controller
     {
         //
         $changeEvent = request()->except(['_token', '_method']);
+        $changeEvent['featured'] = $request->boolean('featured');
+
         Event::where('id', '=', $id)->update($changeEvent);
         return redirect()->route('home');
     }
@@ -97,30 +108,63 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function deleteRegisteredUser($id)
+    {
+        $event = Event::find($id);
+        $registered = $event->user;
+
+        $event->user()->detach($registered);
+    }
+    
     public function destroy($id)
     {
-        //
+        $this->deleteRegisteredUser($id);
         Event::destroy($id);
+
         return redirect()->route('home');
+    }
+
+    public function myEvents()
+    {
+        $user = Auth::user();
+        $myEvent = $user->event;
+
+        return $myEvent;
     }
 
     public function subscribe($id){
         $user = User::find(Auth::id());
         $event = Event::find($id);
 
-        $user->event()->attach($event);
+        $myEvent = $this->myEvents()->where('id', $id)->first();
+        
+        switch($myEvent){
+            case false:
+                $user->event()->attach($event);
+                return back()->with('alert', [
+                    'type' => 'success',
+                    'message' => " Felicidades! Inscripción realizada correctamente",
+                    'icon' => 'fa-solid fa-file-pen',
+                ]);
+                break;
 
-        return redirect()->route('home');
+            case true:
+                return back()->with('alert', [
+                    'type' => 'warning',
+                    'message' => "Ups! Ya te inscribiste en este Evento",
+                    'icon' => 'fa-solid fa-circle-exclamation',
+                ]);
+                break;
+        }
     }
 
-    public function mySubscription(){
-        $myEventUser = [];
+    public function cancelSuscription($id){
+        $user = User::find(Auth::id());
+        $event = Event::find($id);
 
-        if(Auth::user()){
-            $user = Auth::user();
-            $myEventUser = $user->event;
-        }
+        $user->event()->detach($event);
 
-        return view('profile', compact('myEventUser'));
+        return redirect()->route('profile');
     }
 }
