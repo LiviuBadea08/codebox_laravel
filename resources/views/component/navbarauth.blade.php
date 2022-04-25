@@ -20,12 +20,12 @@
             </li>
             <li class="nav__button-auth">
                 <a href="{{ route('info') }}" class="nav__link nav__link-auth">
-                    <span class="nav__text">Sobre Codebox</span>
+                    <span class="nav__text">Contáctanos</span>
                 </a>
             </li>
             <li class="nav__button-auth">
                 <a href="{{ route('logout') }}" class="nav__link nav__link-auth" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    <span class="nav__text">{{ __('Logout') }}</span>
+                    <span class="nav__text">{{ __('Cerrar sesión') }}</span>
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf

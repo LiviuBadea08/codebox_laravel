@@ -1,3 +1,3 @@
 setTimeout(function(){
-    window.location='./home.blade.php'
+    window.location='views/home.blade.php';
     }, 5000);

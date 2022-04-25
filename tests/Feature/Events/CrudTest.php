@@ -31,12 +31,12 @@ class CrudTest extends TestCase
     public function test_if_fetaured_event_appear_in_home(){
         $this -> withoutExceptionHandling();
 
-        Event::factory()->create(['featured' => 1]);
+        $event = Event::factory()->create(['featured' => 1]);
 
-        $response = $this -> get('home');
+        $response = $this -> get('/home');
 
         $response -> assertStatus(200)
-                    -> assertViewHas('featured');
+                    -> assertSee($event->featured);
     }
 
 

@@ -144,7 +144,7 @@ class EventController extends Controller
                 $user->event()->attach($event);
                 return back()->with('alert', [
                     'type' => 'success',
-                    'message' => "Inscripción realizada exitosamente",
+                    'message' => " Felicidades! Inscripción realizada correctamente",
                     'icon' => 'fa-solid fa-file-pen',
                 ]);
                 break;
@@ -152,7 +152,7 @@ class EventController extends Controller
             case true:
                 return back()->with('alert', [
                     'type' => 'warning',
-                    'message' => "Ya estas inscrito en este Evento",
+                    'message' => "Ups! Ya te inscribiste en este Evento",
                     'icon' => 'fa-solid fa-circle-exclamation',
                 ]);
                 break;
