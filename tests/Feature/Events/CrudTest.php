@@ -139,9 +139,12 @@ class CrudTest extends TestCase
             'date' => '2020-01-01',
             'time' => '12:00:00',
             'image' => 'New Image',
-            'price' => 'Nwe Price',
+            'price' => 'New Price',
+            'stock' => 'New Stock',
             'capacity' => 'New Capacity',
-            'featured' => 'New Featured',
+            'featured' => 'New Featured', 
+            'finished' => 'New Finished', 
+            'full' => 'New Full', 
         ]);
         $this -> assertCount(1, Event::all());
     }

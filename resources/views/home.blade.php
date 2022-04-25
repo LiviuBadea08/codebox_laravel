@@ -60,7 +60,7 @@
                 <i class="fa-solid fa-plus-circle"></i>
             </a>
         @endif
-        <div class="flex items-center flex-wrap justify-around mt-3">
+        <div class=" flex items-center flex-wrap justify-around mt-3">
             @foreach ($events as $event)
                 <div class="delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8">
                     <a href="{{ route('show', ['id' => $event->id]) }}">
