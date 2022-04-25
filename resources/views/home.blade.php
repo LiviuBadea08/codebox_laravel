@@ -3,7 +3,7 @@
 @section ('content')
     {{-- Alertas --}}
     @if(session('alert'))
-    <div class="fixed container z-30 top-50 left-0 right-0 bottom-0 w-full sm:w-3/5 fixed container z-30 left-0 right-0 top-0">
+    <div class="fixed h-0 container z-30 top-50 left-0 right-0 bottom-0 w-full sm:w-3/5 fixed container z-30 left-0 right-0 top-0">
         <div class="alert alert-{{ session('alert')['type'] }} alert-dismissible fade show h5" role="alert">
 
             <i class="{{ session('alert')['icon'] }} sm:mr-4"></i><strong>{{ session('alert')['message'] }}</strong>
