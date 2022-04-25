@@ -5,10 +5,13 @@
     @if(session('alert'))
     <div class="fixed container z-30 top-50 left-0 right-0 bottom-0 w-full sm:w-3/5 fixed container z-30 left-0 right-0 top-0">
         <div class="alert alert-{{ session('alert')['type'] }} alert-dismissible fade show h5" role="alert">
+
             <i class="{{ session('alert')['icon'] }} sm:mr-4"></i><strong>{{ session('alert')['message'] }}</strong>
+
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                 <i class="fa-solid fa-xmark h5"></i>
             </button>
+            
         </div>
     </div>
     @endif
@@ -17,6 +20,7 @@
         <div id="default-carousel" class="relative" data-carousel="slide">
             <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
                 @foreach ($featured as $event)
+
                     <a href="{{ route('show', ['id' => $event->id]) }}" class="content-slide hidden duration-700 ease-in-out" data-carousel-item>
                         <div class="slide" style="background-image: url('{{ $event->image }}');"></div>
                         <div class="flex items-center flex-col h-full justify-end">
@@ -31,6 +35,7 @@
                         </div>
                         {{-- <img src="{{ $event->image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."> --}}
                     </a>
+                    
                 @endforeach
             </div>
             <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>

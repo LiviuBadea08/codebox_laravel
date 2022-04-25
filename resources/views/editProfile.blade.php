@@ -43,9 +43,7 @@
                             <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
                                 Acerca de mí
                             </label>
-                            <textarea class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 h-36" id="about" name="about">
-                                {{ $user->about }}
-                            </textarea>
+                            <textarea class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 h-36" id="about" name="about">{{ $user->about }}</textarea>
                         </div>
                         </section>
                         <section class="flex justify-evenly w-96 ">
