@@ -1,12 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div class="container mt-5 mb-5">
-    <div></div>
     <div class="row justify-content-center">
         <div class="col-md-8">
                 <h1 class="mb-3 row justify-content-center font-sans font-bold text-4xl 36px" >Iniciar Sesion</h1>
-                
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -52,7 +49,7 @@
                         </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button class="text-center w-full py-4 bg-green-400 hover:bg-green-400 rounded-md text-white" type="submit" class="bg-emerald-400 hover:bg-emerald-400 btn">
+                                <button class="text-center w-full py-4 bg-emerald-400 hover:bg-emerald-400 rounded-md text-white" type="submit" class="bg-emerald-400 hover:bg-emerald-400 btn">
                                     {{ __('Iniciar Sesion') }}
                                 </button>
                             <div class="flex flex-col ">
