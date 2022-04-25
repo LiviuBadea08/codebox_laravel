@@ -60,7 +60,7 @@
         </h3>
         <section class="flex space-x-2 justify-center mb-5">
             <div class="contenido marco2">
-                <input value="{{$event->capacity}}" type="number" placeholder="Maximo participantes" max="99" />
+                <input name="capacity" value="{{$event->capacity}}" type="number" placeholder="Maximo participantes"/>
             </div>
         </section>
         <div class="flex space-x-2 justify-center space-evenly mb-5">
