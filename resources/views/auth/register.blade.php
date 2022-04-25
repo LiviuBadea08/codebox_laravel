@@ -56,7 +56,7 @@
                         </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button class="text-center w-full py-4 bg-green-400 hover:bg-green-400 rounded-md text-white" type="submit" class="btn btn-primary">
+                                <button class="text-center w-full py-4 bg-emerald-400 hover:bg-emerald-400 rounded-md text-white" type="submit" class="btn btn-primary">
                                     {{ __('Registrarse') }}
                                 </button>
                             </div>
