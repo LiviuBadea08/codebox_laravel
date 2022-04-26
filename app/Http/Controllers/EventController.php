@@ -144,14 +144,12 @@ class EventController extends Controller
         $user = User::find(Auth::id());
         $event = Event::find($id);
 
-        $event->stock = $event->stock - 1;
-        $event->save();
-    
-
         $myEvent = $this->myEvents()->where('id', $id)->first();
         
         switch($myEvent){
             case false:
+                $event->stock = $event->stock - 1;
+                $event->save();
                 $user->event()->attach($event);
                 return back()->with('alert', [
                     'type' => 'success',
