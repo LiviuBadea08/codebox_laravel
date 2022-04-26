@@ -15,7 +15,7 @@
     </div>
   </div>
 
-   <div class="text-center text-gray-700 p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center text-gray-700 p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2022 Copyright:
     <a class="text-gray-800" href="#">Toalhitas do bebe</a>
   </div>
