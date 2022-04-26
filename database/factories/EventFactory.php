@@ -16,6 +16,8 @@ class EventFactory extends Factory
      */
     public function definition()
     {
+        $capacity = $this->faker->numberBetween($min = 1, $max = 10);
+        
         return [
             "name" => $this->faker->company(),
             "description" => $this->faker->realText(),
@@ -23,8 +25,8 @@ class EventFactory extends Factory
             "image" => $this->faker->imageUrl(),
             "date" => $this->faker->date(),
             "time" => $this->faker->time(),
-            "capacity" => $this->faker->numberBetween($min = 1, $max = 10),
-            "stock" => $this->faker->numberBetween($min = 1, $max = 10),
+            "capacity" => $capacity,
+            "stock" => $capacity,
             "finished" => $this->faker->boolean(),
             "full" => $this->faker->boolean(),
             "featured" => $this->faker->boolean(),

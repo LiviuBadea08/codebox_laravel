@@ -9,7 +9,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
-//si un usuario se inscribe dos veces al mismo evento el stock sigue bajando (hay que arreglarlo!), y la vista de iniciar session tiene faltas de ortografia.
 {
     /**
      * Display a listing of the resource.
@@ -143,15 +142,16 @@ class EventController extends Controller
     public function subscribe($id){
         $user = User::find(Auth::id());
         $event = Event::find($id);
-
-        $event->stock = $event->stock - 1;
-        $event->save();
     
 
         $myEvent = $this->myEvents()->where('id', $id)->first();
         
         switch($myEvent){
             case false:
+
+                $event->stock = $event->stock - 1;
+                $event->save();
+
                 $user->event()->attach($event);
                 return back()->with('alert', [
                     'type' => 'success',
