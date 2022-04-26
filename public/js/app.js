@@ -970,7 +970,7 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__(/*! ./bootstrap */ \"./resources/js/bootstrap.js\");\n\n__webpack_require__(/*! ./navbar.js */ \"./resources/js/navbar.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvYXBwLmpzLmpzIiwibWFwcGluZ3MiOiJBQUFBQSxtQkFBTyxDQUFDLGdEQUFELENBQVA7O0FBQ0FBLG1CQUFPLENBQUMsNkNBQUQsQ0FBUCIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9qcy9hcHAuanM/Y2VkNiJdLCJzb3VyY2VzQ29udGVudCI6WyJyZXF1aXJlKCcuL2Jvb3RzdHJhcCcpO1xyXG5yZXF1aXJlKCcuL25hdmJhci5qcycpOyJdLCJuYW1lcyI6WyJyZXF1aXJlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/app.js\n");
+eval("__webpack_require__(/*! ./bootstrap */ \"./resources/js/bootstrap.js\");\n\n__webpack_require__(/*! ./navbar.js */ \"./resources/js/navbar.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvYXBwLmpzLmpzIiwibWFwcGluZ3MiOiJBQUFBQSxtQkFBTyxDQUFDLGdEQUFELENBQVA7O0FBQ0FBLG1CQUFPLENBQUMsNkNBQUQsQ0FBUCIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9qcy9hcHAuanM/Y2VkNiJdLCJzb3VyY2VzQ29udGVudCI6WyJyZXF1aXJlKCcuL2Jvb3RzdHJhcCcpO1xucmVxdWlyZSgnLi9uYXZiYXIuanMnKTsiXSwibmFtZXMiOlsicmVxdWlyZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/app.js\n");
 
 /***/ }),
 
@@ -990,7 +990,7 @@ eval("window._ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodas
   \********************************/
 /***/ (() => {
 
-eval("var icon = document.getElementById('icon');\nvar links = document.getElementById('links');\nvar active = false;\nicon.addEventListener('click', function () {\n  switch (active) {\n    case false:\n      active = showLinks(links);\n      break;\n\n    case true:\n      active = hideLinks(links);\n      break;\n  }\n\n  ;\n});\n\nfunction showLinks(links) {\n  document.getElementsByTagName('body')[0].classList.add(\"no-scroll\");\n  links.style.display = \"flex\";\n  return true;\n}\n\nfunction hideLinks(links) {\n  document.getElementsByTagName('body')[0].classList.remove(\"no-scroll\");\n  links.style.display = \"none\";\n  return false;\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvbmF2YmFyLmpzP2M5NmEiXSwibmFtZXMiOlsiaWNvbiIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiLCJsaW5rcyIsImFjdGl2ZSIsImFkZEV2ZW50TGlzdGVuZXIiLCJzaG93TGlua3MiLCJoaWRlTGlua3MiLCJnZXRFbGVtZW50c0J5VGFnTmFtZSIsImNsYXNzTGlzdCIsImFkZCIsInN0eWxlIiwiZGlzcGxheSIsInJlbW92ZSJdLCJtYXBwaW5ncyI6IkFBQ0EsSUFBSUEsSUFBSSxHQUFHQyxRQUFRLENBQUNDLGNBQVQsQ0FBd0IsTUFBeEIsQ0FBWDtBQUNBLElBQUlDLEtBQUssR0FBR0YsUUFBUSxDQUFDQyxjQUFULENBQXdCLE9BQXhCLENBQVo7QUFFQSxJQUFJRSxNQUFNLEdBQUcsS0FBYjtBQUVBSixJQUFJLENBQUNLLGdCQUFMLENBQXNCLE9BQXRCLEVBQStCLFlBQVU7QUFDckMsVUFBT0QsTUFBUDtBQUNJLFNBQUssS0FBTDtBQUNJQSxNQUFBQSxNQUFNLEdBQUdFLFNBQVMsQ0FBQ0gsS0FBRCxDQUFsQjtBQUNBOztBQUVKLFNBQUssSUFBTDtBQUNJQyxNQUFBQSxNQUFNLEdBQUdHLFNBQVMsQ0FBQ0osS0FBRCxDQUFsQjtBQUNBO0FBUFI7O0FBUUM7QUFDSixDQVZEOztBQVlBLFNBQVNHLFNBQVQsQ0FBbUJILEtBQW5CLEVBQXlCO0FBQ3JCRixFQUFBQSxRQUFRLENBQUNPLG9CQUFULENBQThCLE1BQTlCLEVBQXNDLENBQXRDLEVBQXlDQyxTQUF6QyxDQUFtREMsR0FBbkQsQ0FBdUQsV0FBdkQ7QUFDQVAsRUFBQUEsS0FBSyxDQUFDUSxLQUFOLENBQVlDLE9BQVosR0FBc0IsTUFBdEI7QUFDQSxTQUFPLElBQVA7QUFDSDs7QUFFRCxTQUFTTCxTQUFULENBQW1CSixLQUFuQixFQUF5QjtBQUNyQkYsRUFBQUEsUUFBUSxDQUFDTyxvQkFBVCxDQUE4QixNQUE5QixFQUFzQyxDQUF0QyxFQUF5Q0MsU0FBekMsQ0FBbURJLE1BQW5ELENBQTBELFdBQTFEO0FBQ0FWLEVBQUFBLEtBQUssQ0FBQ1EsS0FBTixDQUFZQyxPQUFaLEdBQXNCLE1BQXRCO0FBQ0EsU0FBTyxLQUFQO0FBQ0giLCJzb3VyY2VzQ29udGVudCI6WyJcclxubGV0IGljb24gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaWNvbicpO1xyXG5sZXQgbGlua3MgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbGlua3MnKTtcclxuXHJcbmxldCBhY3RpdmUgPSBmYWxzZTtcclxuXHJcbmljb24uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBmdW5jdGlvbigpe1xyXG4gICAgc3dpdGNoKGFjdGl2ZSl7XHJcbiAgICAgICAgY2FzZSBmYWxzZTogXHJcbiAgICAgICAgICAgIGFjdGl2ZSA9IHNob3dMaW5rcyhsaW5rcyk7XHJcbiAgICAgICAgICAgIGJyZWFrO1xyXG4gICAgICAgIFxyXG4gICAgICAgIGNhc2UgdHJ1ZTpcclxuICAgICAgICAgICAgYWN0aXZlID0gaGlkZUxpbmtzKGxpbmtzKTtcclxuICAgICAgICAgICAgYnJlYWs7XHJcbiAgICB9O1xyXG59KTtcclxuICAgICAgICBcclxuZnVuY3Rpb24gc2hvd0xpbmtzKGxpbmtzKXtcclxuICAgIGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdib2R5JylbMF0uY2xhc3NMaXN0LmFkZChcIm5vLXNjcm9sbFwiKTtcclxuICAgIGxpbmtzLnN0eWxlLmRpc3BsYXkgPSBcImZsZXhcIjtcclxuICAgIHJldHVybiB0cnVlO1xyXG59XHJcblxyXG5mdW5jdGlvbiBoaWRlTGlua3MobGlua3Mpe1xyXG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2JvZHknKVswXS5jbGFzc0xpc3QucmVtb3ZlKFwibm8tc2Nyb2xsXCIpO1xyXG4gICAgbGlua3Muc3R5bGUuZGlzcGxheSA9IFwibm9uZVwiO1xyXG4gICAgcmV0dXJuIGZhbHNlO1xyXG59XHJcblxyXG4iXSwiZmlsZSI6Ii4vcmVzb3VyY2VzL2pzL25hdmJhci5qcy5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/navbar.js\n");
+eval("var icon = document.getElementById('icon');\nvar links = document.getElementById('links');\nvar active = false;\nicon.addEventListener('click', function () {\n  switch (active) {\n    case false:\n      active = showLinks(links);\n      break;\n\n    case true:\n      active = hideLinks(links);\n      break;\n  }\n\n  ;\n});\n\nfunction showLinks(links) {\n  document.getElementsByTagName('body')[0].classList.add(\"no-scroll\");\n  links.style.display = \"flex\";\n  return true;\n}\n\nfunction hideLinks(links) {\n  document.getElementsByTagName('body')[0].classList.remove(\"no-scroll\");\n  links.style.display = \"none\";\n  return false;\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvbmF2YmFyLmpzP2M5NmEiXSwibmFtZXMiOlsiaWNvbiIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiLCJsaW5rcyIsImFjdGl2ZSIsImFkZEV2ZW50TGlzdGVuZXIiLCJzaG93TGlua3MiLCJoaWRlTGlua3MiLCJnZXRFbGVtZW50c0J5VGFnTmFtZSIsImNsYXNzTGlzdCIsImFkZCIsInN0eWxlIiwiZGlzcGxheSIsInJlbW92ZSJdLCJtYXBwaW5ncyI6IkFBQ0EsSUFBSUEsSUFBSSxHQUFHQyxRQUFRLENBQUNDLGNBQVQsQ0FBd0IsTUFBeEIsQ0FBWDtBQUNBLElBQUlDLEtBQUssR0FBR0YsUUFBUSxDQUFDQyxjQUFULENBQXdCLE9BQXhCLENBQVo7QUFFQSxJQUFJRSxNQUFNLEdBQUcsS0FBYjtBQUVBSixJQUFJLENBQUNLLGdCQUFMLENBQXNCLE9BQXRCLEVBQStCLFlBQVU7QUFDckMsVUFBT0QsTUFBUDtBQUNJLFNBQUssS0FBTDtBQUNJQSxNQUFBQSxNQUFNLEdBQUdFLFNBQVMsQ0FBQ0gsS0FBRCxDQUFsQjtBQUNBOztBQUVKLFNBQUssSUFBTDtBQUNJQyxNQUFBQSxNQUFNLEdBQUdHLFNBQVMsQ0FBQ0osS0FBRCxDQUFsQjtBQUNBO0FBUFI7O0FBUUM7QUFDSixDQVZEOztBQVlBLFNBQVNHLFNBQVQsQ0FBbUJILEtBQW5CLEVBQXlCO0FBQ3JCRixFQUFBQSxRQUFRLENBQUNPLG9CQUFULENBQThCLE1BQTlCLEVBQXNDLENBQXRDLEVBQXlDQyxTQUF6QyxDQUFtREMsR0FBbkQsQ0FBdUQsV0FBdkQ7QUFDQVAsRUFBQUEsS0FBSyxDQUFDUSxLQUFOLENBQVlDLE9BQVosR0FBc0IsTUFBdEI7QUFDQSxTQUFPLElBQVA7QUFDSDs7QUFFRCxTQUFTTCxTQUFULENBQW1CSixLQUFuQixFQUF5QjtBQUNyQkYsRUFBQUEsUUFBUSxDQUFDTyxvQkFBVCxDQUE4QixNQUE5QixFQUFzQyxDQUF0QyxFQUF5Q0MsU0FBekMsQ0FBbURJLE1BQW5ELENBQTBELFdBQTFEO0FBQ0FWLEVBQUFBLEtBQUssQ0FBQ1EsS0FBTixDQUFZQyxPQUFaLEdBQXNCLE1BQXRCO0FBQ0EsU0FBTyxLQUFQO0FBQ0giLCJzb3VyY2VzQ29udGVudCI6WyJcbmxldCBpY29uID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24nKTtcbmxldCBsaW5rcyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdsaW5rcycpO1xuXG5sZXQgYWN0aXZlID0gZmFsc2U7XG5cbmljb24uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBmdW5jdGlvbigpe1xuICAgIHN3aXRjaChhY3RpdmUpe1xuICAgICAgICBjYXNlIGZhbHNlOiBcbiAgICAgICAgICAgIGFjdGl2ZSA9IHNob3dMaW5rcyhsaW5rcyk7XG4gICAgICAgICAgICBicmVhaztcbiAgICAgICAgXG4gICAgICAgIGNhc2UgdHJ1ZTpcbiAgICAgICAgICAgIGFjdGl2ZSA9IGhpZGVMaW5rcyhsaW5rcyk7XG4gICAgICAgICAgICBicmVhaztcbiAgICB9O1xufSk7XG4gICAgICAgIFxuZnVuY3Rpb24gc2hvd0xpbmtzKGxpbmtzKXtcbiAgICBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnYm9keScpWzBdLmNsYXNzTGlzdC5hZGQoXCJuby1zY3JvbGxcIik7XG4gICAgbGlua3Muc3R5bGUuZGlzcGxheSA9IFwiZmxleFwiO1xuICAgIHJldHVybiB0cnVlO1xufVxuXG5mdW5jdGlvbiBoaWRlTGlua3MobGlua3Mpe1xuICAgIGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdib2R5JylbMF0uY2xhc3NMaXN0LnJlbW92ZShcIm5vLXNjcm9sbFwiKTtcbiAgICBsaW5rcy5zdHlsZS5kaXNwbGF5ID0gXCJub25lXCI7XG4gICAgcmV0dXJuIGZhbHNlO1xufVxuXG4iXSwiZmlsZSI6Ii4vcmVzb3VyY2VzL2pzL25hdmJhci5qcy5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/navbar.js\n");
 
 /***/ }),
 
@@ -1019,10 +1019,9 @@ eval("/* module decorator */ module = __webpack_require__.nmd(module);\nvar __WE
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy9hcHAuc2Nzcy5qcyIsIm1hcHBpbmdzIjoiO0FBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy9hcHAuc2Nzcz9hODBiIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/sass/app.scss\n");
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Can't find stylesheet to import.\n   ╷\n11 │ @import \"~@fortawesome/fontawesome-free/scss/fontawesome\";\r\n   │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n   ╵\n  resources\\sass\\app.scss 11:9  root stylesheet\n    at processResult (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\webpack\\lib\\NormalModule.js:758:19)\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\webpack\\lib\\NormalModule.js:860:5\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\sass-loader\\dist\\index.js:54:7\n    at Function.call$2 (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\sass\\sass.dart.js:99281:16)\n    at render_closure1.call$2 (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\sass\\sass.dart.js:84834:12)\n    at _RootZone.runBinary$3$3 (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\sass\\sass.dart.js:29620:18)\n    at _FutureListener.handleError$1 (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\sass\\sass.dart.js:28140:21)");
 
 /***/ }),
 
@@ -1030,10 +1029,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvY3NzL2FwcC5jc3MuanMiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vcmVzb3VyY2VzL2Nzcy9hcHAuY3NzPzllY2YiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/css/app.css\n");
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: Can't resolve '../resources/img/back.jpg' in 'C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\resources\\css'\n    at finishWithoutResolve (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\enhanced-resolve\\lib\\Resolver.js:309:18)\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\enhanced-resolve\\lib\\Resolver.js:386:15\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at eval (eval at create (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:14:1)\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at eval (eval at create (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:25:1)\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:87:43\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at eval (eval at create (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:13:1)\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at processResult (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\webpack\\lib\\NormalModule.js:758:19)\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\webpack\\lib\\NormalModule.js:860:5\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.loader (C:\\xampp\\htdocs\\factoriaF5\\codebox_laravel\\node_modules\\css-loader\\dist\\index.js:155:5)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)");
 
 /***/ }),
 
@@ -1076,42 +1074,7 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	(() => {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
-/******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					var r = fn();
-/******/ 					if (r !== undefined) result = r;
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -1161,69 +1124,14 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		// no baseURI
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"/js/app": 0,
-/******/ 			"css/app": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
-/******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime] = data;
-/******/ 			// add "moreModules" to the modules object,
-/******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
-/******/ 				for(moduleId in moreModules) {
-/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 					}
-/******/ 				}
-/******/ 				if(runtime) var result = runtime(__webpack_require__);
-/******/ 			}
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					installedChunks[chunkId][0]();
-/******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
-/******/ 			}
-/******/ 			return __webpack_require__.O(result);
-/******/ 		}
-/******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
-/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
+/******/ 	__webpack_require__("./resources/js/app.js");
+/******/ 	__webpack_require__("./resources/sass/app.scss");
+/******/ 	var __webpack_exports__ = __webpack_require__("./resources/css/app.css");
 /******/ 	
 /******/ })()
 ;

@@ -17,12 +17,21 @@ class CrudTest extends TestCase
      * @return void
      */
     use RefreshDatabase;
-    public function test_list_event_appear_in_home(){
+    public function test_view_elcome_is_ok(){
+        $this -> withoutExceptionHandling();
+
+        $response = $this -> get('/');
+
+        $response -> assertStatus(200)
+                    -> assertViewIs('welcome');
+    }
+
+    public function test_event_list_appear_in_home(){
         $this -> withoutExceptionHandling();
 
         Event::all();
 
-        $response = $this -> get('/');
+        $response = $this -> get('/home');
 
         $response -> assertStatus(200)
                     -> assertViewIs('home');

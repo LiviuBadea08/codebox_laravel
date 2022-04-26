@@ -23,7 +23,7 @@ use App\Http\Controllers\UserController;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', [EventController::class, 'index'])->name('index');
+Route::get('/', [EventController::class, 'welcome'])->name('welcome');
 Route::get('/home', [EventController::class, 'index'])->name('home');
 Route::get('/show/{id}', [EventController::class, 'show'])->name('show');
 

@@ -9,6 +9,10 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +22,7 @@ class EventController extends Controller
     public function index()
     {
         //
-        $events = Event::orderBy('date', 'desc')->simplePaginate(6);
+        $events = Event::orderBy('date', 'asc')->simplePaginate(6);
         $featured = Event::all()->where('featured', 1);
         return view('home', compact(['events', 'featured']));
     }
@@ -181,4 +185,9 @@ class EventController extends Controller
 
         return redirect()->route('profile');
     }
+
+    public function welcome(){
+        return view('welcome');
+    }
 }
+
