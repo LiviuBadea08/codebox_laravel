@@ -20,7 +20,7 @@
             <div class="container mx-auto px-4">
                 <div class="relative  min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-96">
                     <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2 text-center">
-                        Actualizar Información
+                        Actualizar Información del Evento
                     </h3>
                     <form method="post" action="{{route('update', $event->id)}}">
                     @method('patch')
@@ -44,9 +44,15 @@
                                 </label>
                                 <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 h-36" id="description" value="{{ $event->description }}" name="description">
                             </div>
-                            <div class="flex justify-center mt-3 space-x-48">
-                                <input class="ml-5 w-96 bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="date" id="date" name="date" value="{{ $event->date }}" name="date">
-                                <input class="w-96 bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="time" id="time" name="time" value="{{ $event->time }}" name="time">
+                            <div class="flex justify-center mr-10 mt-3">
+                                <label class="w-40 block text-gray-500 font-bold md:text-right mt-1 pr-4" for="inline-full-name">
+                                    Fecha
+                                </label>
+                                <input class="ml-5 w-60 bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="date" id="date" name="date" value="{{ $event->date }}" name="date">
+                                <label class="w-40 block text-gray-500 font-bold md:text-right mt-1 pr-4" for="inline-full-name">
+                                    Hora
+                                </label>
+                                <input class="mr-5 w-60 bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="time" id="time" name="time" value="{{ $event->time }}" name="time">
                             </div>
                             <div class="md:flex mt-3 items-center justify-between w-11/12">
                                 <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">

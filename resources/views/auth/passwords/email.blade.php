@@ -17,7 +17,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end font-sans font-bold">{{ __('direccion email') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end font-sans font-bold">{{ __('Correo electrónico') }}</label>
 
                             <div class="col-md-6">
                                 <input placeholder="Escribe tu Correo" class="w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"  id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -33,7 +33,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="text-center w-full py-3 bg-emerald-400 hover:bg-green-400 rounded-md text-white">
-                                    {{ __('Enviar link para cambiar contraseña') }}
+                                    {{ __('Enviar') }}
                                 </button>
                             </div>
                         </div>

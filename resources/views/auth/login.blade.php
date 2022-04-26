@@ -3,12 +3,12 @@
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-                <h1 class="mb-3 row justify-content-center font-sans font-bold text-4xl 36px" >Iniciar Sesion</h1>
+                <h1 class="mb-3 row justify-content-center font-sans font-bold text-4xl 36px" >Iniciar Sesión</h1>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end text-base font-sans font-bold">{{ __('Direccion email') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end text-base font-sans font-bold">{{ __('Correo electrónico') }}</label>
 
                             <div class="col-md-6">
                                 <input placeholder="Escribe tu usuario" class="w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans" class=" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
