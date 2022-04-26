@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
+<link rel="icon" href="{{ route('favicon') }}">
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-                <h1 class="mb-3 row justify-content-center font-sans font-bold text-4xl 36px" >Iniciar Sesion</h1>
+                <h1 class="mb-3 row justify-content-center font-sans font-bold text-4xl 36px" >Iniciar Sesión</h1>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -42,7 +43,7 @@
                                 <div class="form-check">
                                     <input class="hover:bg-emerald-400 form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Recuerdame') }}
+                                        {{ __('Recuérdame') }}
                                     </label>
                                 </div>
                             </div>
@@ -50,7 +51,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button class="text-center w-full py-4 bg-emerald-400 hover:bg-emerald-400 rounded-md text-white" type="submit" class="bg-emerald-400 hover:bg-emerald-400 btn">
-                                    {{ __('Iniciar Sesion') }}
+                                    {{ __('Iniciar Sesión') }}
                                 </button>
                             <div class="flex flex-col ">
                                 @if (Route::has('password.request'))
@@ -58,7 +59,7 @@
                                         {{ __('Has olvidado la contraseña?') }}
                                     </a>
                                     <a class="text-sm font-sans font-medium text-gray-600 underline"" href="{{ route('register') }}">
-                                        {{ __('No tienes cuenta registrate!') }}
+                                        {{ __('No tienes cuenta regístrate!') }}
                                 @endif
                             </div>
                         </div>
