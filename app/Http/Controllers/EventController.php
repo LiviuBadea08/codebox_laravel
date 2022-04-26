@@ -142,16 +142,13 @@ class EventController extends Controller
     public function subscribe($id){
         $user = User::find(Auth::id());
         $event = Event::find($id);
-    
 
         $myEvent = $this->myEvents()->where('id', $id)->first();
         
         switch($myEvent){
             case false:
-
                 $event->stock = $event->stock - 1;
                 $event->save();
-
                 $user->event()->attach($event);
                 return back()->with('alert', [
                     'type' => 'success',

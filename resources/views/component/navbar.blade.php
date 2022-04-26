@@ -2,7 +2,7 @@
     <div class="container__nav nav-space-between">
 
         <div class="nav__logo nav-space-between">
-            <a href="{{ url('/') }}"><div id="nav__logo"></div></a>
+            <a href="{{route('home')}}"><div id="nav__logo"></div></a>
             <a href="#" id="icon" class="nav__btn"><i class="icon fas fa-bars"></i></a>
         </div>
         
