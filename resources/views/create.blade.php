@@ -14,7 +14,7 @@
     </div>
 </section>
 
-     <section class="relative py-16 bg-blueGray-200">
+    <section class="relative py-16 bg-blueGray-200">
             <div class="container mx-auto px-4">
                 <div class="relative  min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-96">
                     <h3 class="text-4xl font-semibold leading-normal text-blueGray-700 mb-2 text-center">

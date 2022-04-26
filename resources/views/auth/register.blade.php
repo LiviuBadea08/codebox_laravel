@@ -9,7 +9,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end text-base font-sans font-bold">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
                                 <input class=" w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Direccion email') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end text-base font-sans font-bold">{{ __('Correo electrónico') }}</label>
 
                             <div class="col-md-6">
                                 <input class=" w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end text-base font-sans font-bold">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input class=" w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirmar contraseña') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end text-base font-sans font-bold">{{ __('Confirmar contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input class=" w-full bg-neutral-300 py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
