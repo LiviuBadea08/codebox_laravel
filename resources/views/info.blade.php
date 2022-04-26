@@ -7,7 +7,7 @@
       <div class="text-center w-full">
       </div>
       <div
-        class="max-w-screen-xl mt-10 mb-10 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
+        class="max-w-screen-xl mt-14 mb-10 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
         <div class="flex flex-col justify-between">
           <div>
             <h2 class="text-4xl lg:text-5xl font-bold leading-tight">Hablemos!</h2>
