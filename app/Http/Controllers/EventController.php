@@ -181,4 +181,9 @@ class EventController extends Controller
 
         return redirect()->route('profile');
     }
+
+    public function welcome(){
+        return view('welcome');
+    }
 }
+
