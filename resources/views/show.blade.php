@@ -23,8 +23,8 @@
                         
                         <div class="py-2 w-full flex justify-around bg-gray-900">
                             <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{ $event->time }}</p>
-                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">Plazas restantes: <!--AQUÍ VA EL STOCK-->1 </p>
-                            <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{  $event->date }}</p>
+                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">Plazas restantes: {{ $event->stock }} </p>
+                            <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{ date('m/d/Y' ,strtotime($event->date)) }}</p>
                         </div>
                     </div>
 

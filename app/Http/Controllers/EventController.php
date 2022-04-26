@@ -19,7 +19,7 @@ class EventController extends Controller
     public function index()
     {
         //
-        $events = Event::orderBy('date', 'desc')->simplePaginate(6);
+        $events = Event::orderBy('date', 'asc')->simplePaginate(6);
         $featured = Event::all()->where('featured', 1);
         return view('home', compact(['events', 'featured']));
     }
