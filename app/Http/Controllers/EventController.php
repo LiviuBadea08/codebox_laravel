@@ -9,10 +9,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
 {
     /**
      * Display a listing of the resource.
