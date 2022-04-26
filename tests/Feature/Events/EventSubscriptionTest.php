@@ -57,6 +57,9 @@ class EventSubscriptionTest extends TestCase
     }
 
     /* 
+    
+    testear que un user no se pueda suscribit mas de una vez al mismo evento
+
     testear que el usuario se puede incribir si el evento no esta completo
     testear que el usuario no se puede incribir si el evento esta completo
 
@@ -67,6 +70,6 @@ class EventSubscriptionTest extends TestCase
 
     testear si el evento se muestra como finalizado si ha pasado la fecha
 
-    testear que un user no se pueda suscribit mas de una vez al mismo evento
+    
     */
 }
