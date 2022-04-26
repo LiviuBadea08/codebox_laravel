@@ -20,24 +20,26 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    
 </head>
-<body>
-    <div id="app">
-        @guest
-            @component('component.navbar')
-            @endcomponent
-        @endguest
+<body class="z">
+    <div class="h-screen flex flex-col justify-between" id="app">
+        <div>
+            @guest
+                @component('component.navbar')
+                @endcomponent
+            @endguest
 
-        @auth
-            @component('component.navbarauth')
-            @endcomponent
-        @endauth
-        <main class="">
-            @yield('content')
-        </main>
+            @auth
+                @component('component.navbarauth')
+                @endcomponent
+            @endauth
+            <main class="mb-auto h-auto">
+                @yield('content')
+            </main>
+        </div>
 
-        <footer>
+        <footer class="h-auto inset-x-0 bottom-0">
             @component('component.footer')
             @endcomponent
         </footer>

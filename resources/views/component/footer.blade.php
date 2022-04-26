@@ -1,14 +1,23 @@
-<nav class="h-12 bg-red-500">
-    <section class="flex justify-items-center justify-evenly">
-        <img src="/resources/img/facebook.svg" alt="facebook">
-        <img src="/resources/img/instagram.jpg" alt="instagram">
-        <img src="/resources/img/twitter.svg" alt="twitter">
-    </section>
-    <!--
-    <section class="container__nav nav-space-between ">
-        <div class="nav__logo nav-space-between text-withe ">
-            <a href="/"></a>
-            <a href="#" id="icon"><i class="text-withe fa-solid fa-arrow-up"></i></a>
-        </div>
-    </section> !-->
-</nav>
+<footer class="text-center text-white" style="background-color: #34D399
+;">
+  <div class="container pt-6">
+    <div class="flex justify-center mb-6">
+      <a href="https://www.facebook.com" class="mr-9 text-gray-800">
+      <img src="https://img.icons8.com/wired/40/000000/facebook--v2.png">
+      </a>
+
+      <a href="https://www.instagram.com" class="mr-9 text-gray-800">
+      <img src="https://img.icons8.com/wired/40/000000/instagram-new--v1.png">
+      </a>
+
+      <a href="https://www.twitter.com" class="mr-9 text-gray-800">
+      <img src="https://img.icons8.com/wired/40/000000/twitter--v1.png">
+      </a>
+    </div>
+  </div>
+
+   <div class="text-center text-gray-700 p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-gray-800" href="#">Toalhitas do bebe</a>
+  </div>
+</footer>

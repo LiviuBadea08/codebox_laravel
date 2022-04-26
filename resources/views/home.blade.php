@@ -16,7 +16,7 @@
     </div>
     @endif
 
-    <div class="w-full mx-auto mb-5">
+    <div class="w-full mx-auto mb-5 shadow-lg">
         <div id="default-carousel" class="relative" data-carousel="slide">
             <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
                 @foreach ($featured as $event)

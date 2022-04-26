@@ -28,7 +28,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white px-10 py-6 rounded-bl-3xl rounded-br-3x flex-1">
+                    <div class="bg-white px-10 py-6 rounded-br-3x flex-1">
                         <h1 tabindex="0" class="focus:outline-none text-4xl text-gray-900 font-semibold tracking-wider">{{ $event->name }}</h1>
                         <p tabindex="0" class="focus:outline-none text-gray-700 text-base lg:text-lg lg:leading-8 tracking-wide mt-6 w-11/12">{{ $event->description }}</p>
                         <div class="w-full flex justify-end" >

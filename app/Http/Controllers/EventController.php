@@ -45,6 +45,8 @@ class EventController extends Controller
         //
         $newEvent = request()->except(['_token', 'featured']);
         $newEvent['featured'] = $request->boolean('featured');
+        //when admin creates an event stock is equal to capacity
+        $newEvent['stock'] = $newEvent['capacity'];
 
         Event::create($newEvent);
 
@@ -92,11 +94,15 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id,)
     {
         //
+        $event = Event::find($id);
+        $capacity = $event->user;
         $changeEvent = request()->except(['_token', '_method']);
         $changeEvent['featured'] = $request->boolean('featured');
+        $changeEvent['stock'] = $request['capacity'] - sizeof($capacity);
+        
 
         Event::where('id', '=', $id)->update($changeEvent);
         return redirect()->route('home');
@@ -137,6 +143,10 @@ class EventController extends Controller
         $user = User::find(Auth::id());
         $event = Event::find($id);
 
+        $event->stock = $event->stock - 1;
+        $event->save();
+    
+
         $myEvent = $this->myEvents()->where('id', $id)->first();
         
         switch($myEvent){
@@ -164,6 +174,9 @@ class EventController extends Controller
         $event = Event::find($id);
 
         $user->event()->detach($event);
+
+        $event->stock = $event->stock + 1;
+        $event->save();
 
         return redirect()->route('profile');
     }
