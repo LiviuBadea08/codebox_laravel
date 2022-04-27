@@ -22,7 +22,7 @@
                         <img role="img" aria-label="code editor" tabindex="0" class="focus:outline-none w-full rounded-t-lg" src="{{ $event->image }}" alt="code editor" />
                         
                         <div class="py-2 w-full flex justify-around bg-gray-900">
-                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{ date('d/m/Y h:i',strtotime($event->dateTime)) }}</p>
+                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{ date('d/m/Y H:i',strtotime($event->dateTime)) }}</p>
                             <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">Plazas restantes: {{ $event->stock }} / {{ $event->capacity }} </p>
                         </div>
                     </div>
@@ -45,13 +45,19 @@
                                     </a>
                                 </div>
                             @else
-                                @if($event->stock != 0 && $event->dateTime > $today ) 
-                                    <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 bg-emerald-400 text-white rounded-full px-7 py-1">
+                                @if ($event->dateTime > $today)
+                                    @if ($event->stock != 0) 
+                                    <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
                                         Apuntarse
                                     </a>
+                                    @else
+                                    <div href="#" class="border-3 border-emerald-900 bg-emerald-900 text-white rounded-full px-3 py-1">
+                                        sin plazas 
+                                    </div>
+                                    @endif
                                 @else
                                     <div class="border-3 border-red-500 bg-red-500 text-white rounded-full px-3 py-1">
-                                        Sin plazas
+                                        Finalizado
                                     </div>
                                 @endif
                             @endif
