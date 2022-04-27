@@ -47,7 +47,7 @@
                             @else
                                 @if ($event->dateTime > $today)
                                     @if ($event->stock != 0) 
-                                    <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
+                                    <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 bg-emerald-400 text-white rounded-full px-3 py-1">
                                         Apuntarse
                                     </a>
                                     @else
