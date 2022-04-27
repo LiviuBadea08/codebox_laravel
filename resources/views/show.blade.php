@@ -22,9 +22,8 @@
                         <img role="img" aria-label="code editor" tabindex="0" class="focus:outline-none w-full rounded-t-lg" src="{{ $event->image }}" alt="code editor" />
                         
                         <div class="py-2 w-full flex justify-around bg-gray-900">
-                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{ date('h:i',strtotime($event->time)) }}</p>
+                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{ date('d/m/Y h:i',strtotime($event->dateTime)) }}</p>
                             <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">Plazas restantes: {{ $event->stock }} / {{ $event->capacity }} </p>
-                            <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{  date('d/m/Y' ,strtotime($event->date)) }}</p>
                         </div>
                     </div>
 
