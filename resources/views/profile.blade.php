@@ -94,11 +94,11 @@
                                         Plazas: {{ $event -> stock }}
                                     </p>
                                 </div>
-                                @if ($today < $event->date)
+                                @if ($today < $event->dateTime)
                                     <a  href="{{ route('cancelSuscription', ['id' => $event->id]) }}" class="border-3 border-pink-500 hover:bg-pink-500 text-white rounded-full px-3 py-1" onclick="return confirm('Está seguro que desea desapuntarse del evento ?')">Desapuntarse
                                     </a>
                                 @endif
-                                @if ($today > $event->date)
+                                @if ($today > $event->dateTime)
                                     <div class="border-3 border-red-500 bg-red-500 text-white rounded-full px-3 py-1">
                                         Finalizado
                                     </div>
