@@ -19,12 +19,11 @@ class EventController extends Controller
     public function index()
     {
         //
-        $events = Event::orderBy('date', 'asc')->simplePaginate(6);
+        $events = Event::orderBy('dateTime', 'asc')->simplePaginate(6);
         $featured = Event::all()->where('featured', 1);
-        $today = Carbon::today();
-        $time = Carbon::now();
+        $today = Carbon::now();
 
-        return view('home', compact(['events', 'featured', 'today', 'time']));
+        return view('home', compact(['events', 'featured', 'today']));
     }
 
     /**
@@ -68,8 +67,9 @@ class EventController extends Controller
         //
         $event = Event::find($id);
         $stock = $event->stock;
+        $today = Carbon::now();
 
-        return view('show', compact(['event', 'stock']));
+        return view('show', compact(['event', 'stock', 'today']));
     }
 
     /**

@@ -77,7 +77,7 @@
                             Ver más
                         </a>
                         <div class="flex items-center flex-col">
-                            <p class="text-gray-400 font-light">{{ date('d/m/Y' ,strtotime($event->date)) }}</p>
+                            <p class="text-gray-400 font-light">{{ date('d/m/Y h:i' ,strtotime($event->dateTime)) }}</p>
                             <p class="text-gray-400 font-light">Plazas: {{ $event-> stock }}</p>
                         </div>
                         @if (Auth::check() && Auth::user()->isAdmin())
@@ -94,7 +94,7 @@
                                 </a>
                             </div>
                         @else
-                            @if ($event->stock != 0 && $event->date > $today)) 
+                            @if ($event->stock != 0 && $event->dateTime > $today)) 
                                 <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
                                     Apuntarse
                                 </a>
