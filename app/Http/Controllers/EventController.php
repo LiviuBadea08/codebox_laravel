@@ -151,18 +151,14 @@ class EventController extends Controller
 
         $myEvent = $this->myEvents()->where('id', $id)->first();
         
-        // if($event->stock == 0){
-        //     $myEvent = '0';
-        // }
+        if($event->stock == 0){
+            $myEvent = '0';
+        }
 
         switch($myEvent){
-            // case '0':
-            //     return back()->with('alert', [
-            //         'type' => 'info',
-            //         'message' => "Lo sentimos ya no hay stock para este evento",
-            //         'icon' => 'fa-solid fa-box-open',
-            //     ]);
-            //     break;
+                case '0':
+                return back();
+                break;
 
             case false:
                 $event->stock = $event->stock - 1;
