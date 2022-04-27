@@ -15,7 +15,7 @@
         </div>
     </div>
     @endif
-
+    
     <div class="w-full mx-auto mb-5 shadow-lg">
         <div id="default-carousel" class="relative" data-carousel="slide">
             <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
@@ -77,7 +77,7 @@
                             Ver más
                         </a>
                         <div class="flex items-center flex-col">
-                            <p class="text-gray-400 font-light">{{ date('m/d/Y' ,strtotime($event->date)) }}</p>
+                            <p class="text-gray-400 font-light">{{ date('d/m/Y' ,strtotime($event->date)) }}</p>
                             <p class="text-gray-400 font-light">Plazas: {{ $event-> stock }}</p>
                         </div>
                         @if (Auth::check() && Auth::user()->isAdmin())
@@ -94,16 +94,22 @@
                                 </a>
                             </div>
                         @else
-                            <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
-                                Apuntarse
-                            </a>
+                            @if ($event->stock != 0 && $event->date > $today)) 
+                                <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
+                                    Apuntarse
+                                </a>
+                            @else
+                                <div class="border-3 border-red-500 bg-red-500 text-white rounded-full px-3 py-1">
+                                    Finalizado
+                                </div>
+                            @endif
                         @endif
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
-    <div class="flex justify-around mb-5">
+    <div id='next' class="flex justify-around mb-5">
         {{ $events -> links() }}
     </div>
 

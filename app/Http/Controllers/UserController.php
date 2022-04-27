@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -49,7 +50,9 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $myEventUser = $user->event;
-        return view('profile', compact(['myEventUser', 'user']));
+        $today = Carbon::now();
+
+        return view('profile', compact(['myEventUser', 'user','today']));
     }
 
     /**

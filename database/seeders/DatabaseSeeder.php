@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://static.toiimg.com/thumb/msid-89392914,width-1070,height-580,imgsize-104716,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg',
             'date' => '2020-01-01',
             'time' => '10:00:00',
-            'capacity' => '5',
-            'stock' => '4',
+            'capacity' => '1',
+            'stock' => '0',
             'featured' => true,
         ]);
         Event::factory(15)->create();
