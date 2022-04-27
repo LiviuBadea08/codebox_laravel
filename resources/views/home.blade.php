@@ -81,6 +81,7 @@
                             <p class="text-gray-400 font-light">Plazas: {{ $event-> stock }}</p>
                         </div>
                         @if (Auth::check() && Auth::user()->isAdmin())
+                            @if ($event->dateTime > $today)
                             <div class="flex justify-end mt-2">
                                 <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
                                 @method ('delete')
@@ -93,6 +94,11 @@
                                     <i class="fa-solid fa-pen-to-square icon_hover"></i>
                                 </a>
                             </div>
+                            @else
+                                <div class="border-3 border-red-500 bg-red-500 text-white rounded-full px-3 py-1">
+                                    Finalizado
+                                </div>
+                            @endif
                         @else
                             @if ($event->dateTime > $today)
                                 @if ($event->stock != 0) 
