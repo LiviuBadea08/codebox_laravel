@@ -27,8 +27,6 @@ class EventFactory extends Factory
             "time" => $this->faker->time(),
             "capacity" => $capacity,
             "stock" => $capacity,
-            "finished" => $this->faker->boolean(),
-            "full" => $this->faker->boolean(),
             "featured" => $this->faker->boolean(),
         ];
     }
