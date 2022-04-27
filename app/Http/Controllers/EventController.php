@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\User;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
@@ -20,7 +21,10 @@ class EventController extends Controller
         //
         $events = Event::orderBy('date', 'asc')->simplePaginate(6);
         $featured = Event::all()->where('featured', 1);
-        return view('home', compact(['events', 'featured']));
+        $today = Carbon::today();
+        $time = Carbon::now();
+
+        return view('home', compact(['events', 'featured', 'today', 'time']));
     }
 
     /**
@@ -63,7 +67,9 @@ class EventController extends Controller
     {
         //
         $event = Event::find($id);
-        return view('show', compact('event'));
+        $stock = $event->stock;
+
+        return view('show', compact(['event', 'stock']));
     }
 
     /**
@@ -145,7 +151,19 @@ class EventController extends Controller
 
         $myEvent = $this->myEvents()->where('id', $id)->first();
         
+        // if($event->stock == 0){
+        //     $myEvent = '0';
+        // }
+
         switch($myEvent){
+            // case '0':
+            //     return back()->with('alert', [
+            //         'type' => 'info',
+            //         'message' => "Lo sentimos ya no hay stock para este evento",
+            //         'icon' => 'fa-solid fa-box-open',
+            //     ]);
+            //     break;
+
             case false:
                 $event->stock = $event->stock - 1;
                 $event->save();

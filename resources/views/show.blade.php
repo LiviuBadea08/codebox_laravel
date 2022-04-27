@@ -22,9 +22,9 @@
                         <img role="img" aria-label="code editor" tabindex="0" class="focus:outline-none w-full rounded-t-lg" src="{{ $event->image }}" alt="code editor" />
                         
                         <div class="py-2 w-full flex justify-around bg-gray-900">
-                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{ $event->time }}</p>
+                            <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{ date('h:i',strtotime($event->time)) }}</p>
                             <p  tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">Plazas restantes: {{ $event->stock }} / {{ $event->capacity }} </p>
-                            <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{  date('m/d/Y' ,strtotime($event->date)) }}</p>
+                            <p tabindex="0" class="focus:outline-none text-sm text-white font-semibold tracking-wide">{{  date('d/m/Y' ,strtotime($event->date)) }}</p>
                         </div>
                     </div>
 
@@ -32,9 +32,30 @@
                         <h1 tabindex="0" class="focus:outline-none text-4xl text-gray-900 font-semibold tracking-wider">{{ $event->name }}</h1>
                         <p tabindex="0" class="focus:outline-none text-gray-700 text-base lg:text-lg lg:leading-8 tracking-wide mt-6 w-11/12">{{ $event->description }}</p>
                         <div class="w-full flex justify-end" >
-                            <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 bg-emerald-400 text-white rounded-full px-7 py-1">
-                                Apuntarse
-                            </a>
+                            @if (Auth::check() && Auth::user()->isAdmin())
+                                <div class="flex justify-end mt-2">
+                                    <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
+                                    @method ('delete')
+                                    @csrf 
+                                        <button type="submit" onclick="return confirm('Está seguro que desea eliminar el evento {{$event -> name}}?')" class="mr-10 text-gray-900 text-base" >
+                                            <i class="fa-solid fa-trash-can hover:text-gray-600"></i>
+                                        </button>
+                                    </form>
+                                    <a href="{{ route('edit', ['id' => $event->id]) }}" class="text-gray-900 px-1 text-base ">
+                                        <i class="fa-solid fa-pen-to-square hover:text-gray-600"></i>
+                                    </a>
+                                </div>
+                            @else
+                                @if($event->stock != 0 ) 
+                                    <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 bg-emerald-400 text-white rounded-full px-7 py-1">
+                                        Apuntarse
+                                    </a>
+                                @else
+                                    <div class="border-3 border-red-500 bg-red-500 text-white rounded-full px-3 py-1">
+                                        Sin plazas
+                                    </div>
+                                @endif
+                            @endif
                         </div>
                         <div class="h-5 w-2"></div>
                     </div>
