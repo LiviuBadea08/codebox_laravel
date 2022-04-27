@@ -14,7 +14,7 @@
 <script>
      setTimeout(function(){
     window.location=' {{ route('home') }}';
-    }, 5000);
+    }, 4000);
 </script>
 
 @endsection
