@@ -155,6 +155,10 @@ class EventController extends Controller
             $myEvent = '0';
         }
 
+        if($event -> dateTime < Carbon::now()){
+            $myEvent = '0';
+        }
+
         switch($myEvent){
                 case '0':
                 return back();
