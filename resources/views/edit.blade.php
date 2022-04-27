@@ -51,24 +51,8 @@
                             <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
                                 Fecha y hora
                             </label>
-                            <div class="d-flex w-full justify-around flex-col md:flex-row">
-                                <input class=" bg-gray-200 appearance-none mb-2 border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
-                                id="inline-full-name" 
-                                type="date"  
-                                name="date"
-                                min="0000-00-00" 
-                                max="2022-12-31"
-                                value="{{$event->date}}">
-
-                                <input class="bg-gray-200 appearance-none mb-2 border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
-                                id="inline-full-name" 
-                                type="time"  
-                                name="time"
-                                id="time"
-                                value="{{$event->time}}">
-                            </div>
+                            <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="datetime-local"  name="dateTime">
                         </div>
-
                         <div class="md:flex mt-1 mb-5 flex-row items-center justify-between w-11/12">
                             <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
                                 Capacidad
