@@ -56,6 +56,24 @@ class EventSubscriptionTest extends TestCase
         $this->assertEquals(0, $event->user()->count());
     }
 
+    public function test_user_cannot_subscribe_to_event_with_stock_0() {
+        $this->withExceptionHandling();
+
+        $event = Event::factory()->create();
+
+        $user = User::factory()->create();
+        $response = $this->actingAs($user);
+
+        $event->stock = 0;
+        $event->save();
+
+        $response = $this->get(route('subscribe', $event->id));
+
+        $this->assertEquals($event->user()->count() + 0, $event->user()->count());
+    }
+
+        
+
     /* 
     
     testear que un user no se pueda suscribit mas de una vez al mismo evento
