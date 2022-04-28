@@ -19,9 +19,10 @@ class EventController extends Controller
     public function index()
     {
         //
+        Event::where('dateTime', '<', Carbon::now())->update(['featured' => 0]);
         $events = Event::orderBy('dateTime', 'asc')->simplePaginate(6);
         $today = Carbon::now();
-        $featured = Event::all()->where('featured', 1)->where('dateTime', '<', $today);
+        $featured = Event::all()->where('featured', 1);
         
         return view('home', compact(['events', 'featured', 'today']));
     }
