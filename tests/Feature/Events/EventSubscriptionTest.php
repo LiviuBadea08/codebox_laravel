@@ -120,14 +120,4 @@ class EventSubscriptionTest extends TestCase
         $this->assertEquals(0, $event->user()->count());
     }
 
-
-    /* 
-
-    testear si el evento se muestra como finalizado si ha pasado la fecha
-
-    testear que el evento se muestra como completo si no hay stock
-
-    
-    */
-
 }

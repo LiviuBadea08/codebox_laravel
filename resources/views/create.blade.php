@@ -78,9 +78,7 @@
                                 type="number"  
                                 name="capacity"
                                 id="capacity"
-                                placeholder="Maximo participantes" 
-                                min="1" 
-                                max="3">
+                                placeholder="Maximo participantes">
 
                                 <div class="flex items-center">
                                     <input 

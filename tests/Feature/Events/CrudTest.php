@@ -156,6 +156,7 @@ class CrudTest extends TestCase
             'full' => 'New Full', 
         ]);
         $this -> assertCount(1, Event::all());
+
     }
     
     public function test_an_event_cannot_be_created_by_a_non_admin() {

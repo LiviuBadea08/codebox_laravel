@@ -80,8 +80,6 @@
                                 name="capacity"
                                 id="capacity"
                                 placeholder="Maximo participantes" 
-                                min="1" 
-                                max="3"
                                 value="{{$event->capacity}}">
 
                                 <div class="flex items-center">
