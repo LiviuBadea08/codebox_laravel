@@ -82,33 +82,47 @@
                             <p class="text-gray-400 font-light">{{ date('d/m/Y H:i' ,strtotime($event->dateTime)) }}</p>
                             <p class="text-gray-400 font-light">Plazas: {{ $event-> stock }}</p>
                         </div>
+
                         @if (Auth::check() && Auth::user()->isAdmin())
-                            <div class="flex justify-end mt-2">
-                                <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
-                                @method ('delete')
-                                @csrf 
-                                    <button type="submit" onclick="return confirm('Está seguro que desea eliminar el evento {{$event -> name}}?')" class="mr-10 text-white text-base" >
-                                        <i class="fa-solid fa-trash-can icon_hover"></i>
-                                    </button>
-                                </form>
-                                <a href="{{ route('edit', ['id' => $event->id]) }}" class=" text-white px-1 text-base ">
-                                    <i class="fa-solid fa-pen-to-square icon_hover"></i>
-                                </a>
-                            </div>
-                        @else
-                        
+
                             @if ($event->dateTime > $today)
+                                <div class="flex justify-end mt-2">
+                                    <form action="{{ route('delete', ['id' => $event->id]) }}" method="post">
+                                    @method ('delete')
+                                    @csrf 
+                                        <button type="submit" onclick="return confirm('Está seguro que desea eliminar el evento {{$event -> name}}?')" class="mr-10 text-white text-base" >
+                                            <i class="fa-solid fa-trash-can icon_hover"></i>
+                                        </button>
+                                    </form>
+                                    <a href="{{ route('edit', ['id' => $event->id]) }}" class=" text-white px-1 text-base ">
+                                        <i class="fa-solid fa-pen-to-square icon_hover"></i>
+                                    </a>
+                                </div>
+                            @endif
+
+                            @if ($event->dateTime < $today)
+                                <div class="border-3 border-red-500 bg-red-500 text-white rounded-full px-3 py-1">
+                                    Finalizado
+                                </div>
+                            @endif
+
+                        @else
+                            @if ($event->dateTime > $today)
+
                                 @if ($event->stock != 0) 
                                     <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
                                         Apuntarse
                                     </a>
                                 @endif
+
                                 @if ($event->stock == 0) 
                                     <div href="#" class="border-3 border-emerald-900 bg-emerald-900 text-white rounded-full px-3 py-1">
                                         sin plazas 
                                     </div>
                                 @endif
+
                             @endif
+
                             @if ($event->dateTime < $today)
                                 <div class="border-3 border-red-500 bg-red-500 text-white rounded-full px-3 py-1">
                                     Finalizado
@@ -116,6 +130,7 @@
                             @endif
 
                         @endif
+                        
                     </div>
                 </div>
             @endforeach

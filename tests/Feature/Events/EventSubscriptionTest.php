@@ -32,16 +32,17 @@ class EventSubscriptionTest extends TestCase
     public function test_logged_user_can_subscribe_if_stock_is_avaliable_and_event_date_has_not_passed() {
         $this->withExceptionHandling();
 
-        $event = Event::factory()->create();
-        $event->stock != 0;
-        $event->date = now()->addDays(1);
-
         $user = User::factory()->create();
-        $response = $this->actingAs($user);
+        $this->actingAs($user);
+
+        $event = Event::factory()->create([
+            'dateTime' => Carbon::now()->addDays(1),
+            'stock' => 1
+        ]);
 
         $response = $this->get(route('subscribe', $event->id));
 
-        $this->assertEquals($user->id, $event->user[0]->id);
+        $this->assertEquals(1, $event->user()->count());
     }
 
     public function test_stock_decreases_when_user_subscribe_to_event() {
@@ -105,24 +106,11 @@ class EventSubscriptionTest extends TestCase
         $this->assertEquals(0, $event->user()->count());
     }
 
-
-    /* 
-
-    testear que el usuario se puede incribir si no ha pasado el tiempo de inscripcion
-    testear que el usuario no se puede incribir si ha pasado el tiempo de inscripcion
-
-    testear si el evento se muestra como finalizado si ha pasado la fecha
-
-    testear que el evento se muestra como completo si no hay stock
-
-    
-    */
-
     public function test_if_user_cannot_subscribe_to_event_if_time_is_over() {
         $this->withExceptionHandling();
 
         $event = Event::factory()->create();
-        $event->date = Carbon::now();
+        $event->dateTime = Carbon::now()->subDays(-1);
 
         $user = User::factory()->create();
         $response = $this->actingAs($user);
@@ -131,5 +119,15 @@ class EventSubscriptionTest extends TestCase
 
         $this->assertEquals(0, $event->user()->count());
     }
+
+
+    /* 
+
+    testear si el evento se muestra como finalizado si ha pasado la fecha
+
+    testear que el evento se muestra como completo si no hay stock
+
+    
+    */
 
 }
