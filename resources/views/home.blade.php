@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section ('content')
-    {{-- Alertas --}}
+    {{-- Alert --}}
     @if(session('alert'))
     <div class="fixed h-0 container z-30 top-50 left-0 right-0 bottom-0 w-full sm:w-3/5 fixed container z-30 left-0 right-0 top-0">
         <div class="alert alert-{{ session('alert')['type'] }} alert-dismissible fade show h5" role="alert">
@@ -15,7 +15,7 @@
         </div>
     </div>
     @endif
-    
+    {{-- carousel --}}
     <div class="w-full mx-auto mb-5 shadow-lg">
         <div id="default-carousel" class="relative" data-carousel="slide">
             <div class="overflow-hidden relative h-56 sm:h-64 xl:h-80 2xl:h-96">
@@ -33,7 +33,6 @@
                                 </p>
                             </div>
                         </div>
-                        {{-- <img src="{{ $event->image }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."> --}}
                     </a>
                     
                 @endforeach
@@ -60,7 +59,10 @@
                 <i class="fa-solid fa-plus-circle"></i>
             </a>
         @endif
+
+        {{-- cards --}}
         <div class=" flex items-center flex-wrap justify-around mt-3">
+
             @foreach ($events as $event)
                 <div class="delay-50 duration-100 bg-gray-900 p-4 rounded-lg max-w-sm group mb-8">
                     <a href="{{ route('show', ['id' => $event->id]) }}">
@@ -94,27 +96,34 @@
                                 </a>
                             </div>
                         @else
+                        
                             @if ($event->dateTime > $today)
                                 @if ($event->stock != 0) 
-                                <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
-                                    Apuntarse
-                                </a>
-                                @else
-                                <div href="#" class="border-3 border-emerald-900 bg-emerald-900 text-white rounded-full px-3 py-1">
-                                    sin plazas 
-                                </div>
+                                    <a href="{{ url('subscribe', $event->id) }}" class="border-3 border-emerald-400 hover:bg-emerald-400 text-white rounded-full px-3 py-1">
+                                        Apuntarse
+                                    </a>
                                 @endif
-                            @else
+                                @if ($event->stock == 0) 
+                                    <div href="#" class="border-3 border-emerald-900 bg-emerald-900 text-white rounded-full px-3 py-1">
+                                        sin plazas 
+                                    </div>
+                                @endif
+                            @endif
+                            @if ($event->dateTime < $today)
                                 <div class="border-3 border-red-500 bg-red-500 text-white rounded-full px-3 py-1">
                                     Finalizado
                                 </div>
                             @endif
+
                         @endif
                     </div>
                 </div>
             @endforeach
+
         </div>
     </div>
+
+    {{-- buttoms --}}
     <div id='next' class="flex justify-around mb-5">
         {{ $events -> links() }}
     </div>

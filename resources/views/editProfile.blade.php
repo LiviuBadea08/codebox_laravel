@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
 
     <main class="profile-page">
 
@@ -23,43 +23,64 @@
                     <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2 text-center">
                         Actualizar Información
                     </h3>
+
                     <form class="px-7 flex flex-col items-center" method="post" action="{{route('profile.update', $user)}}">
-                    @method('patch')
-                    @csrf
-                    <section class="w-full flex flex-column justify-items-center">
+                        @method('patch')
+                        @csrf
+                        <div class="w-full flex flex-column justify-items-center">
                     
-                        <div class=" md:flex mt-5 items-center  justify-between w-11/12 ">
-                            <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Imagen de perfil
-                            </label>
-                            <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="url" value="{{ $user->picture }}" name="picture">
+                            <div class=" md:flex mt-5 items-center  justify-between w-11/12 ">
+                                <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                    Imagen de perfil
+                                </label>
+                                <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                                id="inline-full-name" 
+                                type="text" 
+                                value="{{ $user->picture }}" 
+                                name="picture">
+                            </div>
+
+                            <div class=" md:flex mt-3 items-center  justify-between w-11/12 ">
+                                <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                    Nombre
+                                </label>
+                                <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                                id="inline-full-name" 
+                                type="text" 
+                                value="{{ $user->name }}" 
+                                name="name">
+                            </div>
+
+                            <div class="md:flex mt-3 items-center justify-between w-11/12">
+                                <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                    Dirección 
+                                </label>
+                                <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                                id="address" 
+                                type="text" 
+                                value="{{ $user->address }}" 
+                                name="address">
+                            </div>
+
+                            <div class="md:flex mt-3 mb-5 items-center justify-between w-11/12">
+                                <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                    Acerca de mí
+                                </label>
+                                <textarea class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 h-36" 
+                                id="about" 
+                                name="about">{{ $user->about }}</textarea>
+                            </div>
+
                         </div>
-                        <div class=" md:flex mt-3 items-center  justify-between w-11/12 ">
-                            <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Nombre
-                            </label>
-                            <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="{{ $user->name }}" name="name">
+
+                        <div class="flex justify-evenly w-96 ">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-5" onclick="return confirm('Está seguro que desea realizar estos cambios ?')">
+                                Actualizar
+                            </button> 
+                            <a href="{{route('profile', $user)}}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-5">Cancelar</a>
                         </div>
-                        <div class="md:flex mt-3 items-center justify-between w-11/12">
-                            <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Dirección 
-                            </label>
-                            <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="address" type="text" value="{{ $user->address }}" name="address">
-                        </div>
-                        <div class="md:flex mt-3 mb-5 items-center justify-between w-11/12">
-                            <label class="w-40 block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Acerca de mí
-                            </label>
-                            <textarea class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 h-36" id="about" name="about">{{ $user->about }}</textarea>
-                        </div>
-                        </section>
-                        <section class="flex justify-evenly w-96 ">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-5" onclick="return confirm('Está seguro que desea realizar estos cambios ?')">
-                            Actualizar
-                        </button> 
-                        <a href="{{route('profile', $user)}}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-5">Cancelar</a>
-                        </section>
                     </form>
+
                 </div>
             </div>
         </section>

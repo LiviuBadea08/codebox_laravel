@@ -1,3 +1,4 @@
+// navar
 
 let icon = document.getElementById('icon');
 let links = document.getElementById('links');
@@ -28,3 +29,7 @@ function hideLinks(links){
     return false;
 }
 
+// button next and previous
+let pages = document.querySelector('#next').childNodes[1].childNodes;
+// pages[1].innerHTML = "Anterior";
+// pages[3].innerHTML = "Siguiente";
