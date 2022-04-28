@@ -20,6 +20,7 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <link rel="icon" href="poner logo"> -->
     
 </head>
 <body class="z">
