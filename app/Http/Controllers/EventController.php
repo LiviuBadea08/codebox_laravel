@@ -21,8 +21,8 @@ class EventController extends Controller
         //
         $events = Event::orderBy('dateTime', 'asc')->simplePaginate(6);
         $today = Carbon::now();
-        $featured = Event::all()->where('featured', 1)->where('dateTime', '<', $today);
-        
+        $featured = Event::all()->where('featured', 1)->where('dateTime', '>', $today);
+
         return view('home', compact(['events', 'featured', 'today']));
     }
 
