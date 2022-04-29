@@ -39,7 +39,11 @@ php artisan serve
 You can now access the server at http://localhost
 
 ![landing page pic](https://github.com/LiviuBadea08/codebox_laravel/blob/dev/resources/img/websitepic.png?raw=true)
-##Future versions
+![](public\images\codebox1.png)
+![](public\images\codebox2.png)
+![](public\images\codebox3.png)
+
+## Future versions
 For next versions our team wants to add a the superadmin role that can choose who is admin, whe also want to givem more power to the admin so he can ban users from the platform and delete many events at the same time.
 We also would like to test better our code and implement some quality of life improvements for the user. 
 
