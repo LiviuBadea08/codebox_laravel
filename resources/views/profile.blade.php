@@ -88,7 +88,7 @@
                                 </a>
                                 <div class="flex items-center flex-col">
                                     <p class="text-gray-400 font-light">
-                                        {{ date('m/d/Y' ,strtotime($event->date)) }}
+                                    {{ date('d/m/Y H:i' ,strtotime($event->dateTime)) }}
                                     </p>
                                     <p class="text-gray-400 font-light">
                                         Plazas: {{ $event -> stock }}

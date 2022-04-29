@@ -3,7 +3,7 @@
 
         <div class="nav__logo nav-space-between">
             <a href="{{route('home')}}"><div id="nav__logo"></div></a>
-            <a href="#" id="icon" class="nav__btn"><i class="icon fas fa-bars"></i></a>
+            <a id="icon" class="cursor-pointer nav__btn"><i class="icon fas fa-bars"></i></a>
         </div>
         
         <ul id="links" class="nav__list">

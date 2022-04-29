@@ -5,7 +5,7 @@
 
             <a href="{{route('home')}}"><div id="nav__logo"></div></a>
 
-            <a href="#" id="icon" class="nav__btn-auth">
+            <a id="icon" class="cursor-pointer nav__btn-auth">
                 <span class="auth__container auth__text">{{ Auth::user()->name }}</span>
                 <i class="fas fa-user-circle auth__container"></i>
             </a>
