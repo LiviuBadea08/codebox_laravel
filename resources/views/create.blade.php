@@ -64,7 +64,8 @@
                             <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
                             id="inline-full-name" 
                             type="datetime-local"  
-                            name="dateTime">
+                            name="dateTime"
+                            min="{{ date('Y-m-d' ,strtotime($today)) }}T{{ date('H:i' ,strtotime($today)) }}">
                         </div>
 
                         <div class="md:flex mt-1 mb-5 flex-row items-center justify-between w-11/12">
@@ -78,7 +79,8 @@
                                 type="number"  
                                 name="capacity"
                                 id="capacity"
-                                placeholder="Maximo participantes">
+                                placeholder="Maximo participantes"
+                                min= 0>
 
                                 <div class="flex items-center">
                                     <input 

@@ -64,9 +64,10 @@
                                 Fecha y hora
                             </label>
                             <input class="w-1/2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                            type="datetime-local"
                             id="inline-full-name" 
                             name="dateTime"
-                            value="{{ $event->dateTime }}">
+                            value="{{ date('Y-m-d' ,strtotime($event->dateTime)) }}T{{ date('H:i' ,strtotime($event->dateTime)) }}">
                         </div>
 
                         <div class="md:flex mt-1 mb-5 flex-row items-center justify-between w-11/12">
@@ -80,7 +81,8 @@
                                 name="capacity"
                                 id="capacity"
                                 placeholder="Maximo participantes" 
-                                value="{{$event->capacity}}">
+                                value="{{$event->capacity}}"
+                                min= 0>
 
                                 <div class="flex items-center">
                                     <input 
