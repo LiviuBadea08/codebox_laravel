@@ -1,5 +1,8 @@
+# The project
+This project is part of a formation course by FactoriaF5 where de main goal is to adquire the ability to create a fully functional database which can be accessed by MVC (Model View Controller) method using PHP (Laravel) and make a fully functional web page with user and admin roles, where the admin can CRUD (create, update and, delete) the products (tech events) and the user can sign up to them.
+
 # Codebox
-Codebox is a spanish masterclasses, webinars, and events hub, where you can enrole into your favorite masterclasses.
+Codebox is a project designed to be a non-profit association with an online platform that offers free workshops, courses, talks and training related to IT.
 # Getting started
 ## Installation
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
@@ -15,34 +18,31 @@ Install all the dependencies using composer
 ```bash
 composer install
 ```
+```bash
+npm install
+```
+```bash
+npm run dev
+```
 Copy the example env file and make the required configuration changes in the .env file
 ```bash
 cp .env.example .env
 ```
-Run the database migrations (Set the database connection in .env before migrating)
+Create a database clalled codebox_laravel and make de required changes in the env file (.env). Run the database migrations and the seed to se some event exaples
 ```bash
-php artisan migrate
+php artisan migrate:fresh --seed
 ```
 Start the local development server
 ```bash
 php artisan serve
 ```
-You can now access the server at [http://localhost:8000](http://localhost:8000)
-## Database seeding
-Populate the database with seed data with relationships which includes users, articles, comments, tags, favorites and follows. This can help you to quickly start testing the api or couple a frontend and start using it with ready content.
-Open the DummyDataSeeder and set the property values as per your requirement
-```bash
-database/seeds/DummyDataSeeder.php
-```
-Run the database seeder and you're done
-```bash
-php artisan db:seed
-```
-Note : It's recommended to have a clean database before seeding. You can refresh your migrations at any point to clean the database by running the following command
-```bash
-php artisan migrate:refresh
-```
+You can now access the server at http://localhost
+
 ![landing page pic](https://github.com/LiviuBadea08/codebox_laravel/blob/dev/resources/img/websitepic.png?raw=true)
+##Future versions
+For next versions our team wants to add a the superadmin role that can choose who is admin, whe also want to givem more power to the admin so he can ban users from the platform and delete many events at the same time.
+We also would like to test better our code and implement some quality of life improvements for the user. 
+
 ## Build with
 For the development of this app we've used:
 - Figma
