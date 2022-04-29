@@ -34,7 +34,8 @@ class EventController extends Controller
     public function create()
     {
         //
-        return view('create');
+        $today = Carbon::now();
+        return view('create', compact('today'));
     }
 
     /**
@@ -81,7 +82,6 @@ class EventController extends Controller
     public function edit($id)
     {
         // 
-        
         $event = Event::find($id);
         $checked = '';
         if ($event['featured']) {
