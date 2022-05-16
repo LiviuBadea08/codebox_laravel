@@ -1,5 +1,5 @@
 # The project
-This project is part of a formation course by FactoriaF5 where de main goal is to adquire the ability to create a fully functional database which can be accessed by MVC (Model View Controller) method using PHP (Laravel) and make a fully functional web page with user and admin roles, where the admin can CRUD (create, update and, delete) the products (tech events) and the user can sign up to them.
+This project is part of a bootcamp by FactoriaF5 where the main goal is to aquire the ability to create a fully functional database which can be accessed by MVC (Model View Controller) method using PHP (Laravel) and make a fully functional webpage with user and admin roles, where the admin can CRUD (create, read, update and delete) the products (tech events) and the user can sign up to them.
 
 # Codebox
 Codebox is a project designed to be a non-profit association with an online platform that offers free workshops, courses, talks and training related to IT.
@@ -67,5 +67,3 @@ For the development of this app we've used:
 - Abde Belkhialat
 ## Contributing
 Pull requests are not welcome as long as this is a Bootcamp project.
-
-## Thanks to FactoriaF5 for making this project possible.
